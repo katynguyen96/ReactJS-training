@@ -1,6 +1,9 @@
+import Home from './Components/Home/index.js'
 function App() {
   return (
-    <h1>React Practice</h1>
+    <div className='App'>
+      <Home/>
+    </div>
   );
 }
 

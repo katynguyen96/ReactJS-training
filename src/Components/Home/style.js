@@ -15,14 +15,14 @@ const Wrapper = styled.div`
 	margin: auto;
 `
 const Search = styled.div`
-	display: flex
+	display: flex;
 `
 
 const ListItem = styled.div`
 	display: flex;
-	justify-content: flex-start
-	width: 400px;
-	border: 2px solid #ABABAB;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 850px;
 	margin-top: 40px;
 	margin-right: 150px;
 	margin-left: 260px;

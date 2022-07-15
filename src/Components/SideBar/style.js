@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
+	position: absolute;
+	top: 110px;
 	display: flex;
 	flex-direction: column;
-	margin-top: -160px;
 `
 const BrandWrapper = styled.div`
 	margin-left: 55px;

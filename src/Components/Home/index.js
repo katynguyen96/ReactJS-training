@@ -2,6 +2,7 @@ import {Title, Span, Wrapper, Search, ListItem, Line} from './style.js'
 import SearchBar from '../SearchBar'
 import SideBar from '../SideBar'
 import AddButton from '../AddButton'
+import CardItem from '../Common/CardItem'
 
 function Home () {
 	return (
@@ -13,13 +14,9 @@ function Home () {
 	  	</Search>
 	  	<Line>List Product</Line>
 	  	<ListItem>
-	  		<h2>Item</h2>
-	  		<h2>Item</h2>
-	  		<h2>Item</h2>
-	  		<h2>Item</h2>
+	  		<CardItem/>
 	  	</ListItem>
 	  	<SideBar/>
-
 	</Wrapper>
 	)
 }

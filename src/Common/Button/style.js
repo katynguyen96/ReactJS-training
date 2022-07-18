@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const AddNewButton = styled.button`
+export const CommonButton = styled.button`
 	width: 100px;
 	height: 30px;
 	margin-top: 130px;
@@ -8,7 +8,3 @@ const AddNewButton = styled.button`
 	font-size: 15px;
 	cursor: pointer;
 `
-
-export {
-	AddNewButton
-}

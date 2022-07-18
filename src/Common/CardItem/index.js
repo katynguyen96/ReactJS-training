@@ -1,5 +1,4 @@
-import  {Wrapper, Image, ItemInfo, Name, Info} from './style'
-import ItemButton from '../Edit-Delete-Button'
+import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button} from './style'
 
 function CardItem () {
 	return (
@@ -10,7 +9,10 @@ function CardItem () {
 				<Info>Price: 200$</Info>
 				<Info>Brand: SamSung</Info>
 			</ItemInfo>
-			<ItemButton/>
+			<WrapperButton>
+				<Button edit><i className="fas fa-edit"></i></Button>
+				<Button><i className="fas fa-trash-alt"></i></Button>
+			</WrapperButton>
 		</Wrapper>
 	)
 }

@@ -1,10 +1,9 @@
-import {Wrapper, Form, Title, Label, Input, Brand, Value} from './style'
-import ModalButton from '../Modal-Button'
+import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Button} from './style'
 
-function Modal () {
+function Modal ({text}) {
 	return (
 		<Wrapper>
-			<Title>Create Product</Title>
+			<Title>{text}</Title>
 			<Form>
 				<Label>Product Name</Label>
 				<Input/>
@@ -19,7 +18,10 @@ function Modal () {
 				<Label>Image Link</Label>
 				<Input/>
 			</Form>
-			<ModalButton/>
+			<WrapperButton>
+				<Button save>Save</Button>
+				<Button id="close-button">Close</Button>
+			</WrapperButton>
 		</Wrapper>
 	)
 }

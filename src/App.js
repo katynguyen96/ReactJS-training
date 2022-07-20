@@ -1,4 +1,5 @@
 import Home from './Components/Home/index.js'
+
 function App() {
   return (
     <div className='App'>

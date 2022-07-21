@@ -1,13 +1,31 @@
 import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Button} from './style'
 import {useStore, actions} from '../../store'
+import {useState} from 'react'
 
 function Modal ({text}) {
 
 	const [state, dispatch] = useStore()
 	const {products, productName, productPrice, productBrand, productImg} = state
 
+	const [show, setShow] = useState(true)
+
+	const handleCloseModal = (e) => {
+		e.preventDefault()
+	}
+
+	const options = [
+		{value:'samsung', text:'Samsung'},
+		{value:'iphone', text:'Iphone'},
+		{value:'vivo', text:'Vivo'},
+	]
+
 	const handleAdd = () => {
-		dispatch(actions.addProduct([productName , productPrice , productBrand , productImg]))
+		if(productName && productPrice && productImg) {
+			dispatch(actions.addProduct(state))
+		}
+		else {
+			alert("Please fill all the field")
+		}
 	}
 
 	console.log(products)
@@ -30,10 +48,17 @@ function Modal ({text}) {
 				}}
 				/>
 				<Label>Brand</Label>
-				<Brand>
-					<Value>Iphone</Value>
-					<Value>SamSung</Value>
-					<Value>Vivo</Value>
+				<Brand 
+					value={productBrand}
+					onChange={e=>{
+						dispatch(actions.setProductBrand(e.target.value))
+					}}
+				>
+					{options.map(option=>(
+						<Value key={option.value} value={option.value}>
+							{option.text}
+						</Value>
+					))}
 				</Brand>
 				<Label>Image Link</Label>
 				<Input 
@@ -45,10 +70,7 @@ function Modal ({text}) {
 			</Form>
 			<WrapperButton>
 				<Button save onClick={handleAdd}>Save</Button>
-				<Button id="close-button">Close</Button>
-				{products.map((product, index)=>{
-					return <li key={index}>{product}</li>
-				})}
+				<Button onClick={handleCloseModal}>Close</Button>
 			</WrapperButton>
 		</Wrapper>
 	)

@@ -6,6 +6,7 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 15px;
+	margin-top: 40px;
 `
 
 const Image = styled.img`

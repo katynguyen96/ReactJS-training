@@ -23,7 +23,6 @@ const ListItem = styled.div`
 	justify-content: space-between;
 	flex-wrap: wrap;
 	width: 850px;
-	margin-top: 40px;
 	margin-right: 150px;
 	margin-left: 260px;
 `

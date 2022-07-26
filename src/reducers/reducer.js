@@ -1,13 +1,16 @@
+import { v4 as uuidv4 } from 'uuid'
 import {
 	SET_PRODUCT_NAME, 
 	SET_PRODUCT_PRICE,
 	SET_PRODUCT_BRAND,
 	SET_PRODUCT_IMAGE,
-	ADD_PRODUCT
+	ADD_PRODUCT,
+	REMOVE_PRODUCT
 } from '../store/constants'
 
 const initState = {
 	products: [],
+	id: '',
 	productName: '',
 	productPrice: '',
 	productBrand: '',
@@ -39,8 +42,15 @@ function reducer(state, action) {
 		case ADD_PRODUCT:
 			return {
 				...state,
-				products: [...state.products, action.payload]
+				products: [...state.products, action.payload],
+				id: uuidv4()
 			}
+		case REMOVE_PRODUCT:
+			return {
+				...state,
+				products: state.products.filter(product => product.id !== action.payload)
+			}
+	
 		default:
 			throw new Error('Invalid action')
 	}

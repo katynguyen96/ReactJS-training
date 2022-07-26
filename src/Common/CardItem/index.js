@@ -1,14 +1,14 @@
 import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button} from './style'
-import {useStore} from '../../store'
+import {useStore, actions} from '../../store'
 // import {useState} from 'react'
 
 function CardItem () {
-	const [state] = useStore()
+	const [state, dispatch] = useStore()
 
 	return (
 		<>
-			{state.products.map((product, index)=>(
-				<Wrapper key={index}>
+			{state.products.map((product)=>(
+				<Wrapper key={product.id}>
 					<Image src={product.productImg}/>
 					<ItemInfo>
 						<Name>{product.productName}</Name>
@@ -17,12 +17,11 @@ function CardItem () {
 					</ItemInfo>
 					<WrapperButton>
 						<Button edit><i className="fas fa-edit"></i></Button>
-						<Button><i className="fas fa-trash-alt"></i></Button>
+						<Button onClick={() => dispatch(actions.removeProduct(product.id))}><i className="fas fa-trash-alt"></i></Button>
 					</WrapperButton>
 				</Wrapper>
 			))}
 		</>
-		
 	)
 }
 

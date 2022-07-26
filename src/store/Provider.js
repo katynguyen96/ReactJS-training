@@ -12,9 +12,9 @@ function Provider({children}) {
 	}, [state])
 	return (
 		<Context.Provider value={[state, dispatch]}>
-		{children}
+			{children}
 		</Context.Provider>
 		)
 	}
 
-	export default Provider
+export default Provider

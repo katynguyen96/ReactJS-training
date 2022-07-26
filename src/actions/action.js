@@ -3,7 +3,8 @@ import {
 	SET_PRODUCT_PRICE,
 	SET_PRODUCT_BRAND,
 	SET_PRODUCT_IMAGE,
-	ADD_PRODUCT
+	ADD_PRODUCT,
+	REMOVE_PRODUCT
 } from '../store/constants'
 
 export const setProductName = payload => ({
@@ -30,3 +31,9 @@ export const addProduct = payload => ({
 	type: ADD_PRODUCT,
 	payload
 })
+
+export const removeProduct = payload => ({
+	type: REMOVE_PRODUCT,
+	payload
+})
+

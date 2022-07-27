@@ -5,9 +5,13 @@ import {useStore, actions} from '../../store'
 function CardItem () {
 	const [state, dispatch] = useStore()
 
+	const {isSearchActive, foundProduct} = state
+
+	const currentProduct = isSearchActive ? foundProduct : state.products
+
 	return (
 		<>
-			{state.products.map((product)=>(
+			{currentProduct.map((product)=>(
 				<Wrapper key={product.id}>
 					<Image src={product.productImg}/>
 					<ItemInfo>

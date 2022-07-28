@@ -31,7 +31,7 @@ const WrapperButton = styled.div`
 	margin-top: 14px;
 	display: flex;
 	justify-content: space-between;
-	margin-left: 15px;
+	margin-left: 25px;
 `
 
 const Button = styled.button`

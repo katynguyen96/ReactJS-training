@@ -24,9 +24,14 @@ const BrandName = styled.p`
 	width: 20px;
 `
 
+const ClearButton = styled.button`
+	
+`
+
 export {
 	Title,
 	Wrapper,
 	BrandName,
-	BrandWrapper
+	BrandWrapper,
+	ClearButton
 }

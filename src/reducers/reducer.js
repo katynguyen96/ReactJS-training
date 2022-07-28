@@ -6,7 +6,9 @@ import {
 	SET_PRODUCT_IMAGE,
 	ADD_PRODUCT,
 	REMOVE_PRODUCT,
-	SEARCH_PRODUCT
+	SEARCH_PRODUCT,
+	FILTER_PRODUCT,
+	CLEAR_FILTER
 } from '../store/constants'
 
 const initState = {
@@ -58,6 +60,17 @@ function reducer(state, action) {
 				...state,
 				isSearchActive: !!action.payload.length > 0 || false,
 				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
+			}
+		case FILTER_PRODUCT:
+			return {
+				...state,
+				isSearchActive: true,
+				foundProduct: state.products.filter(product => product.productBrand.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
+			}
+		case CLEAR_FILTER:
+			return {
+				...state,
+				isSearchActive: false
 			}
 		default:
 			throw new Error('Invalid action')

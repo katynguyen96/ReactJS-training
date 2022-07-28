@@ -5,9 +5,9 @@ import {useStore, actions} from '../../store'
 function CardItem () {
 	const [state, dispatch] = useStore()
 
-	const {isSearchActive, foundProduct} = state
+	const {isSearchActive, foundProduct, products} = state
 
-	const currentProduct = isSearchActive ? foundProduct : state.products
+	const currentProduct = isSearchActive ? foundProduct : products
 
 	return (
 		<>

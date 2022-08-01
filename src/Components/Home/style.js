@@ -20,11 +20,12 @@ const Search = styled.div`
 
 const ListItem = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 850px;
 	margin-right: 150px;
-	margin-left: 260px;
+	margin-left: 220px;
+	margin-top: -30px;
 `
 const Line = styled.h2`
 	font-size: 22px;

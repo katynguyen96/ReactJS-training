@@ -15,9 +15,9 @@ function CardItem () {
 				<Wrapper key={product.id}>
 					<Image src={product.productImg}/>
 					<ItemInfo>
+						<Info brand>{product.productBrand}</Info>
 						<Name>{product.productName}</Name>
-						<Info>Price: {product.productPrice}$</Info>
-						<Info>Brand: {product.productBrand}</Info>
+						<Info>$ {product.productPrice}</Info>
 					</ItemInfo>
 					<WrapperButton>
 						<Button edit><i className="fas fa-edit"></i></Button>

@@ -1,37 +1,51 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-	width: 300px;
+	border-radius: 15px;
+	width: 200px;
 	height: auto;
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
-	margin-left: 15px;
+	margin-left: 80px;
 	margin-top: 40px;
+	box-shadow: 3px 7px 12px #888888;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		transform: scale(1.1);
+	}
 `
 
 const Image = styled.img`
 	width: 150px;
+	margin-left: 8px;
 `
 
 const ItemInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-left: 15px;
+	margin-top: 8px;
 `
 
 const Name = styled.p`
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 600;
+	margin-top: -5px;
 `
 
 const Info = styled.p`
 	font-size: 16px;
+	margin-top: -10px;
+	opacity: ${props => props.brand ? "0.6" : "1"};
+	text-transform: capitalize;
 `
 
 const WrapperButton = styled.div`
-	margin-top: 14px;
 	display: flex;
-	justify-content: space-between;
-	margin-left: 25px;
+	margin-bottom: 8px;
+	justify-content: space-around;
+	margin-left: -15px;
 `
 
 const Button = styled.button`
@@ -49,5 +63,5 @@ export {
 	Name,
 	Info,
 	WrapperButton,
-	Button
+	Button,
 }

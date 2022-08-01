@@ -36,8 +36,10 @@ function Modal ({text}) {
 				<Label>Product Name</Label>
 				<Input 
 				value={productName}
+				//isCreate ? '' : 
 				onChange={e=>{
 					dispatch(actions.setProductName(e.target.value))
+					//loai bo action, dung useState
 				}}
 				/>
 				<Label>Price</Label>

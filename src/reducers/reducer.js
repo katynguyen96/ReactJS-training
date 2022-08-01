@@ -58,7 +58,7 @@ function reducer(state, action) {
 		case SEARCH_PRODUCT:
 			return {
 				...state,
-				isSearchActive: !!action.payload.length > 0 || false,
+				isSearchActive: !!action.payload.length,
 				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
 			}
 		case FILTER_PRODUCT:

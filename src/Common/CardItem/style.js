@@ -10,15 +10,11 @@ const Wrapper = styled.div`
 	margin-left: 80px;
 	margin-top: 40px;
 	box-shadow: 3px 7px 12px #888888;
-	transition: all 0.3s ease-in-out;
-	&:hover {
-		transform: scale(1.1);
-	}
 `
 
 const Image = styled.img`
 	width: 150px;
-	margin-left: 8px;
+	margin-left: 12px;
 `
 
 const ItemInfo = styled.div`

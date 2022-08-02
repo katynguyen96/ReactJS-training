@@ -7,15 +7,15 @@ const InputWrapper = styled.div`
 `
 
 const SearchInput = styled.input`
-	width: 210px;
-	height: 20px;
+	width: 270px;
+	height: 25px;
 	border-radius: 5px;
 `
 
 const SearchButton = styled.button`
 	font-size: 15px;
 	margin-left: 7px;
-	height: 26px;
+	height: 30px;
 	width: 45px;
 	background-color: #FFFF66;
 	border: none;

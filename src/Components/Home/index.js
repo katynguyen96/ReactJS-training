@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Title, Span, Wrapper, Search, ListItem, Line} from './style.js'
+import {NavBar, Title, Span, Wrapper, Search, ListItem, Line, Image, Email} from './style.js'
 import SearchBar from '../SearchBar'
 import SideBar from '../SideBar'
 import Button from '../../Common/Button'
@@ -16,16 +16,20 @@ function Home () {
 	return (
 	<Wrapper>
 		<Search>
-	  		<Title><Span>m</Span>y<Span>p</Span>roduct</Title>
-	  		<SearchBar/>
-	  		<Button onClicked={handleShowModal} text='Add new' icon='fas fa-plus-square' ></Button>
+				<NavBar>
+	  			<Title><Span>m</Span>y<Span>p</Span>roduct</Title>
+	  			<SearchBar/>
+	  			<Image/>
+	  			<Email>example@gmail.com</Email>
+	  		</NavBar>
+	  		<Button onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>
 	  		{show && <Modal text='Create Product'/>}
-	  	</Search>
-	  	<Line>List Product</Line>
-	  	<ListItem>
-	  		<CardItem/>
-	  	</ListItem>
-	  	<SideBar/>
+	  </Search>
+	  <Line>List Product</Line>
+	  <ListItem>
+	  	<CardItem/>
+	  </ListItem>
+	  <SideBar/>
 	</Wrapper>
 	)
 }

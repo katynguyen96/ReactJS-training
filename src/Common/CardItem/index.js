@@ -2,7 +2,7 @@ import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button} from './st
 import {useStore, actions} from '../../store'
 // import {useState} from 'react'
 
-function CardItem () {
+function CardItem ({handleDelete}) {
 	const [state, dispatch] = useStore()
 
 	const {isSearchActive, foundProduct, products} = state
@@ -21,7 +21,7 @@ function CardItem () {
 					</ItemInfo>
 					<WrapperButton>
 						<Button edit><i className="fas fa-edit"></i></Button>
-						<Button onClick={() => dispatch(actions.removeProduct(product.id))}><i className="fas fa-trash-alt"></i></Button>
+						<Button onClick={() => handleDelete(product.id)}><i className="fas fa-trash-alt"></i></Button>
 					</WrapperButton>
 				</Wrapper>
 			))}

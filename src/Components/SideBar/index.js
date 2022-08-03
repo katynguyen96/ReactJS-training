@@ -1,16 +1,6 @@
 import {Title, Wrapper, BrandName, BrandWrapper, ClearButton} from './style'
-import {useStore, actions} from '../../store'
 
-function SideBar () {
-	const [state, dispatch] = useStore()
-
-	const handleFilter = (e) => {
-		dispatch(actions.filterProduct(e.target.getAttribute('value')))
-	}
-
-	const handleClearFilter = () => {
-		dispatch(actions.clearFilter())
-	}
+function SideBar ({handleFilter, handleClearFilter}) {
 
 	const options = [
 		{value:'samsung', text:'Samsung'},
@@ -24,12 +14,12 @@ function SideBar () {
 			<Title>Brand</Title>
 			<BrandWrapper>
 				{options.map(option=>(
-						<BrandName key={option.value} value={option.value} onClick={handleFilter}>
+						<BrandName key={option.value} value={option.value} onClick={(e) => handleFilter(e.target.getAttribute('value'))}>
 							{option.text}
 						</BrandName>
 					))}
 			</BrandWrapper>
-			<ClearButton onClick={handleClearFilter}>Clear filter</ClearButton>
+			<ClearButton onClick={() => handleClearFilter()}>Clear filter</ClearButton>
 		</Wrapper>
 	)
 }

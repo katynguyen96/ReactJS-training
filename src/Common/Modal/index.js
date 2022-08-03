@@ -2,7 +2,7 @@ import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Button}
 import {useStore, actions} from '../../store'
 import {useState} from 'react'
 
-function Modal ({text}) {
+function Modal ({text, handleAdd}) {
 
 	const [state, dispatch] = useStore()
 	const {products, productName, productPrice, productBrand, productImg} = state
@@ -18,15 +18,6 @@ function Modal ({text}) {
 		{value:'iphone', text:'Iphone'},
 		{value:'vivo', text:'Vivo'},
 	]
-
-	const handleAdd = () => {
-		if(productName && productPrice && productImg) {
-			dispatch(actions.addProduct(state))
-		}
-		else {
-			alert("Please fill all the field")
-		}
-	}
 
 	console.log(products)
 	return (
@@ -71,7 +62,7 @@ function Modal ({text}) {
 				/>
 			</Form>
 			<WrapperButton>
-				<Button save onClick={handleAdd}>Save</Button>
+				<Button save onClick={() => handleAdd()}>Save</Button>
 				<Button onClick={handleCloseModal}>Close</Button>
 			</WrapperButton>
 		</Wrapper>

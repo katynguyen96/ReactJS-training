@@ -12,8 +12,14 @@ const Wrapper = styled.div`
 	box-shadow: 3px 7px 12px #888888;
 `
 
-const Image = styled.img`
+const ImageWarapper = styled.div`
 	width: 150px;
+	height: 150px;
+`
+
+const Image = styled.img`
+	width: 100%;
+	height: auto;
 	margin-left: 12px;
 `
 
@@ -60,4 +66,5 @@ export {
 	Info,
 	WrapperButton,
 	Button,
+	ImageWarapper
 }

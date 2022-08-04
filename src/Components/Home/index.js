@@ -9,13 +9,13 @@ import Modal from '../../Common/Modal'
 
 function Home () {
 	const [state, dispatch] = useStore()
-	const {products, productName, productPrice, productBrand, productImg} = state
+	// const {products, productName, productPrice, productBrand, productImg} = state
 
 	const [show, setShow] = useState(false)
 
-	const handleAdd = () => {
-		if(productName && productPrice && productImg) {
-			dispatch(actions.addProduct(state))
+	const handleAdd = (product) => {
+		if(product.productName && product.productPrice && product.productImg && product.productBrand) {
+			dispatch(actions.addProduct(product))
 		}
 		else {
 			alert("Please fill all the field")

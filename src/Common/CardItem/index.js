@@ -1,5 +1,6 @@
-import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button, ImageWarapper} from './style'
+import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
 import {useStore, actions} from '../../store'
+import Button from '../Button'
 // import {useState} from 'react'
 
 function CardItem ({handleDelete}) {
@@ -22,8 +23,8 @@ function CardItem ({handleDelete}) {
 						<Info>$ {product.productPrice}</Info>
 					</ItemInfo>
 					<WrapperButton>
-						<Button edit><i className="fas fa-edit"></i></Button>
-						<Button onClick={() => handleDelete(product.id)}><i className="fas fa-trash-alt"></i></Button>
+						<Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit'></Button>
+						<Button className='card-button' inputColor='#C36C1C' icon='fas fa-trash-alt' onClicked={() => handleDelete(product.id)}></Button>
 					</WrapperButton>
 				</Wrapper>
 			))}

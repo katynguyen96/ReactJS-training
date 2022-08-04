@@ -1,7 +1,7 @@
 import {CommonButton} from './style'
-function Button ({onClicked, text, className, icon}) {
+function Button ({onClicked, text, className, icon, inputColor}) {
 	return (
-		<CommonButton onClick={onClicked} className={className}>
+		<CommonButton inputColor={inputColor} onClick={onClicked} className={className}>
 			{text} <i className={icon}></i>
 		</CommonButton>
 	)

@@ -34,34 +34,9 @@ const BrandName = styled.p`
 	}
 `
 
-const ClearButton = styled.button`
-	width: 180px;
-	height: 30px;
-	margin-left: 13px;
-	cursor: pointer;
-	border-radius: 5px;
-	border: none;
-	&::before {
-		content:'';
-		position: absolute;
-		left:13px;
-		right:17px;
-		bottom: 158px;
-		height: 2px;
-		background-color: #0099FF;
-		transition: transform 300ms ease-in-out;
-		transform: scaleX(0);
-	}
-
-	&:hover::before, &:focus::before {
-		transform: scaleX(1);
-	}
-`
-
 export {
 	Title,
 	Wrapper,
 	BrandName,
-	BrandWrapper,
-	ClearButton
+	BrandWrapper
 }

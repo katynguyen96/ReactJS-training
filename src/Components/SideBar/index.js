@@ -1,4 +1,5 @@
-import {Title, Wrapper, BrandName, BrandWrapper, ClearButton} from './style'
+import {Title, Wrapper, BrandName, BrandWrapper} from './style'
+import Button from '../../Common/Button'
 
 function SideBar ({handleFilter, handleClearFilter}) {
 
@@ -19,7 +20,7 @@ function SideBar ({handleFilter, handleClearFilter}) {
 						</BrandName>
 					))}
 			</BrandWrapper>
-			<ClearButton onClick={() => handleClearFilter()}>Clear filter</ClearButton>
+			<Button className='clear-filter-button' text='Clear Filter' onClicked={() => handleClearFilter()}></Button>
 		</Wrapper>
 	)
 }

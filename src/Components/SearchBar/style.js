@@ -12,19 +12,7 @@ const SearchInput = styled.input`
 	border-radius: 5px;
 `
 
-const SearchButton = styled.button`
-	font-size: 15px;
-	margin-left: 7px;
-	height: 30px;
-	width: 45px;
-	background-color: #FFFF66;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-`
-
 export {
 	InputWrapper,
-	SearchInput,
-	SearchButton
+	SearchInput
 }

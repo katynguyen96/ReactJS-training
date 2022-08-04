@@ -1,6 +1,7 @@
-import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Button} from './style'
+import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton} from './style'
 import {useStore} from '../../store'
 import {useState} from 'react'
+import Button from '../Button'
 
 function Modal ({text, handleAdd}) {
 
@@ -64,8 +65,8 @@ function Modal ({text, handleAdd}) {
 				/>
 			</Form>
 			<WrapperButton>
-				<Button save onClick={() => handleAdd({...product, id})}>Save</Button>
-				<Button onClick={handleCloseModal}>Close</Button>
+				<Button inputColor="rgba(2, 88, 255, 0.54)" className='modal-button' text='Save' onClicked={() => handleAdd({...product, id})}></Button>
+				<Button className='modal-button' text='Close' onClicked={handleCloseModal}></Button>
 			</WrapperButton>
 		</Wrapper>
 	)

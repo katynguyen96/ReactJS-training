@@ -50,14 +50,6 @@ const WrapperButton = styled.div`
 	margin-left: -15px;
 `
 
-const Button = styled.button`
-	font-size: 22px;
-	margin-left: 18px;
-	border: none;
-	cursor: pointer;
-	color: ${props => props.edit ? "#A3A0C2" : "#C36C1C"};
-`
-
 export {
 	Wrapper,
 	Image,
@@ -65,6 +57,5 @@ export {
 	Name,
 	Info,
 	WrapperButton,
-	Button,
 	ImageWarapper
 }

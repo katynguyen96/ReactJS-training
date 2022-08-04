@@ -51,7 +51,7 @@ function Home () {
 	  			<Image/>
 	  			<Email>example@gmail.com</Email>
 	  		</NavBar>
-	  		<Button onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>
+	  		<Button className='add' onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>
 	  		{show && <Modal text='Create Product' handleAdd={handleAdd}/>}
 	  </Search>
 	  <Line>List Product</Line>

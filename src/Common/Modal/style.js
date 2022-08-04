@@ -31,7 +31,7 @@ const Input = styled.input`
 `
 
 const Brand = styled.select`
-	width: 90px;
+	width: 120px;
 	height: 30px;
 	border-radius: 5px;
 `

@@ -1,4 +1,4 @@
-import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button} from './style'
+import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, Button, ImageWarapper} from './style'
 import {useStore, actions} from '../../store'
 // import {useState} from 'react'
 
@@ -13,7 +13,9 @@ function CardItem ({handleDelete}) {
 		<>
 			{currentProduct.map((product)=>(
 				<Wrapper key={product.id}>
+				<ImageWarapper>
 					<Image src={product.productImg}/>
+					</ImageWarapper>
 					<ItemInfo>
 						<Info brand>{product.productBrand}</Info>
 						<Name>{product.productName}</Name>

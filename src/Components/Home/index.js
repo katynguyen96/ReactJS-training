@@ -4,18 +4,20 @@ import {NavBar, Title, Span, Wrapper, Search, ListItem, Line, Image, Email} from
 import SearchBar from '../SearchBar'
 import SideBar from '../SideBar'
 import Button from '../../Common/Button'
-import CardItem from '../../Common/CardItem'
 import Modal from '../../Common/Modal'
+import Products from '../Products'
+import { v4 as uuidv4 } from 'uuid'
+
 
 function Home () {
 	const [state, dispatch] = useStore()
-	// const {products, productName, productPrice, productBrand, productImg} = state
 
 	const [show, setShow] = useState(false)
 
 	const handleAdd = (product) => {
 		if(product.productName && product.productPrice && product.productImg && product.productBrand) {
-			dispatch(actions.addProduct(product))
+			dispatch(actions.addProduct(product, product.id = uuidv4()))
+			handleCloseModal()
 		}
 		else {
 			alert("Please fill all the field")
@@ -39,7 +41,11 @@ function Home () {
 	}
 
 	const handleShowModal = () => {
-		setShow(!show)
+		setShow(true)
+	}
+
+	const handleCloseModal = () => {
+		setShow(false)
 	} 
 
 	return (
@@ -52,11 +58,11 @@ function Home () {
 	  			<Email>example@gmail.com</Email>
 	  		</NavBar>
 	  		<Button className='add' onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>
-	  		{show && <Modal text='Create Product' handleAdd={handleAdd}/>}
+	  		{show && <Modal handleCloseModal={handleCloseModal} isCreated='true' text='Create Product' handleAdd={handleAdd}/>}
 	  </Search>
 	  <Line>List Product</Line>
 	  <ListItem>
-	  	<CardItem handleDelete={handleDelete}/>
+	  	<Products handleDelete={handleDelete}/>
 	  </ListItem>
 	  <SideBar handleFilter={handleFilter} handleClearFilter={handleClearFilter}/>
 	</Wrapper>

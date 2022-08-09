@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import {
 	ADD_PRODUCT,
 	REMOVE_PRODUCT,
@@ -24,7 +23,6 @@ function reducer(state, action) {
 			return {
 				...state,
 				products: [...state.products, action.payload],
-				id: uuidv4()
 			}
 		case REMOVE_PRODUCT:
 			return {

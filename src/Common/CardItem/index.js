@@ -1,33 +1,35 @@
-import  {Wrapper, Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
-import {useStore, actions} from '../../store'
+import  {Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
 import Button from '../Button'
-// import {useState} from 'react'
+import Modal from '../Modal'
+import {useState} from 'react'
 
-function CardItem ({handleDelete}) {
-	const [state, dispatch] = useStore()
+function CardItem ({handleDelete, theProduct}) {
+	const [show, setShow] = useState(false)
 
-	const {isSearchActive, foundProduct, products} = state
+	const handleShowModal = () => {
+		setShow(true)
+	}
 
-	const currentProduct = isSearchActive ? foundProduct : products
+	const handleCloseModal = () => {
+		setShow(false)
+	}
 
 	return (
 		<>
-			{currentProduct.map((product)=>(
-				<Wrapper key={product.id}>
-				<ImageWarapper>
-					<Image src={product.productImg}/>
-					</ImageWarapper>
-					<ItemInfo>
-						<Info brand>{product.productBrand}</Info>
-						<Name>{product.productName}</Name>
-						<Info>$ {product.productPrice}</Info>
-					</ItemInfo>
-					<WrapperButton>
-						<Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit'></Button>
-						<Button className='card-button' inputColor='#C36C1C' icon='fas fa-trash-alt' onClicked={() => handleDelete(product.id)}></Button>
-					</WrapperButton>
-				</Wrapper>
-			))}
+			<p>{theProduct.id}</p>
+			<ImageWarapper>
+				<Image src={theProduct.productImg}/>
+			</ImageWarapper>
+			<ItemInfo>
+				<Info brand>{theProduct.productBrand}</Info>
+				<Name>{theProduct.productName}</Name>
+				<Info>$ {theProduct.productPrice}</Info>
+			</ItemInfo>
+			<WrapperButton>
+				<Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit' onClicked={handleShowModal}></Button>
+					{show && <Modal theProduct={theProduct} handleCloseModal={handleCloseModal} text='Edit Product'/>}
+				<Button className='card-button' inputColor='#C36C1C' icon='fas fa-trash-alt' onClicked={() => handleDelete(theProduct.id)}></Button>
+			</WrapperButton>	
 		</>
 	)
 }

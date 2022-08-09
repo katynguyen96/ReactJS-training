@@ -1,24 +1,14 @@
 import {Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton} from './style'
-import {useStore} from '../../store'
 import {useState} from 'react'
 import Button from '../Button'
 
-function Modal ({text, handleAdd}) {
-
-	const [state, dispatch] = useStore()
-	const {id} = state
+function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct}) {
 	const [product, setProduct] = useState({})
 
 	const handleChange = (e) => {
 		const name = e.target.name
 		const value = e.target.value
 		setProduct({...product, [name]:value})
-	}
-
-	const [show, setShow] = useState(true)
-
-	const handleCloseModal = (e) => {
-		e.preventDefault()
 	}
 
 	const options = [
@@ -35,20 +25,19 @@ function Modal ({text, handleAdd}) {
 				<Label>Product Name</Label>
 				<Input
 				name='productName' 
-				value={product.productName || "" }
-				//isCreate ? '' : 
+				value={ isCreated ? product.productName || "" : theProduct.productName }
 				onChange={handleChange}
 				/>
 				<Label>Price</Label>
 				<Input
 					name='productPrice'
-					value={product.productPrice || "" }
+					value={isCreated ? product.productPrice || "" : theProduct.productPrice }
 					onChange={handleChange}
 				/>
 				<Label>Brand</Label>
 				<Brand
 					name='productBrand' 
-					value={product.productBrand || "" }
+					value={isCreated ? product.productBrand || "" : theProduct.productBrand }
 					onChange={handleChange}
 				>
 					{options.map(option=>(
@@ -60,13 +49,13 @@ function Modal ({text, handleAdd}) {
 				<Label>Image Link</Label>
 				<Input
 					name='productImg' 
-					value={product.productImg || "" }
+					value={isCreated ? product.productImg || "" : theProduct.productImg }
 					onChange={handleChange}
 				/>
 			</Form>
 			<WrapperButton>
-				<Button inputColor="rgba(2, 88, 255, 0.54)" className='modal-button' text='Save' onClicked={() => handleAdd({...product, id})}></Button>
-				<Button className='modal-button' text='Close' onClicked={handleCloseModal}></Button>
+				<Button inputColor="rgba(2, 88, 255, 0.54)" className='modal-button' text='Save' onClicked={() => handleAdd({...product})}></Button>
+				<Button className='modal-button' text='Close' onClicked={() => handleCloseModal()}></Button>
 			</WrapperButton>
 		</Wrapper>
 	)

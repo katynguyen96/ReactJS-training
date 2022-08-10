@@ -1,5 +1,6 @@
 import {
 	ADD_PRODUCT,
+	EDIT_PRODUCT,
 	REMOVE_PRODUCT,
 	SEARCH_PRODUCT,
 	FILTER_PRODUCT,
@@ -8,6 +9,11 @@ import {
 
 export const addProduct = payload => ({
 	type: ADD_PRODUCT,
+	payload
+})
+
+export const editProduct = payload => ({
+	type: EDIT_PRODUCT,
 	payload
 })
 

@@ -24,10 +24,6 @@ function Home () {
 		}
 	}
 
-	const handleDelete = (id) => {
-		dispatch(actions.removeProduct(id))
-	}
-
 	const handleSearch = (text) => {
 		dispatch(actions.searchProduct(text))
 	}
@@ -62,7 +58,7 @@ function Home () {
 	  </Search>
 	  <Line>List Product</Line>
 	  <ListItem>
-	  	<Products handleDelete={handleDelete}/>
+	  	<Products/>
 	  </ListItem>
 	  <SideBar handleFilter={handleFilter} handleClearFilter={handleClearFilter}/>
 	</Wrapper>

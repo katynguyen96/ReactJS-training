@@ -1,5 +1,6 @@
 import {
 	ADD_PRODUCT,
+	EDIT_PRODUCT,
 	REMOVE_PRODUCT,
 	SEARCH_PRODUCT,
 	FILTER_PRODUCT,
@@ -24,28 +25,48 @@ function reducer(state, action) {
 				...state,
 				products: [...state.products, action.payload],
 			}
+
+		case EDIT_PRODUCT:
+			const updatedProduct = action.payload
+
+			const updatedProducts = state.products.map((product)=>{
+				if(product.id === updatedProduct.id){
+					return updatedProduct
+				}
+				return product
+			})
+
+			return {
+				...state,
+				products: updatedProducts,
+			}
+
 		case REMOVE_PRODUCT:
 			return {
 				...state,
 				products: state.products.filter(product => product.id !== action.payload)
 			}
+
 		case SEARCH_PRODUCT:
 			return {
 				...state,
 				isSearchActive: !!action.payload.length,
 				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
 			}
+
 		case FILTER_PRODUCT:
 			return {
 				...state,
 				isSearchActive: true,
 				foundProduct: state.products.filter(product => product.productBrand.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
 			}
+
 		case CLEAR_FILTER:
 			return {
 				...state,
 				isSearchActive: false
 			}
+			
 		default:
 			throw new Error('Invalid action')
 	}

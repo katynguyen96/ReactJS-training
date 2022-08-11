@@ -34,7 +34,6 @@ function CardItem ({handleDelete, theProduct, handleEdit }) {
 
 	return (
 		<>
-			<p>{theProduct.id}</p>
 			<ImageWarapper>
 				<Image src={theProduct.productImg}/>
 			</ImageWarapper>

@@ -68,12 +68,12 @@ export const CommonButton = styled.button`
 }
 
 	&.confirm-delete-button {
-	cursor: pointer;
-  width: 88px;
-  height: 39px;
-  border: none;
-  font-size: 16px;
-  background-color: ${props => props.inputColor || "#CCCCCC"};
-  border-radius: 10px;
+		cursor: pointer;
+	  width: 88px;
+	  height: 39px;
+	  border: none;
+	  font-size: 16px;
+	  background-color: ${props => props.inputColor || "#CCCCCC"};
+	  border-radius: 10px;
 	}
 `

@@ -1,23 +1,22 @@
+import Button from '../Button'
+
 import {
   ModalWrapper,
   Modal,
   Title,
   Content,
   ButtonWrapper,
-  Button,
 } from "./style";
 
-function ConfirmDeleteModal({ onClosePopup, onOK }) {
+function ConfirmDeleteModal({ handleCloseModal, handleDelete }) {
   return (
     <ModalWrapper>
       <Modal>
         <Title>Delete</Title>
         <Content>Are you sure delete this products ?</Content>
         <ButtonWrapper>
-          <Button yes>
-            Yes
-          </Button>
-          <Button>No</Button>
+          <Button inputColor="rgba(2, 88, 255, 0.54)" className="confirm-delete-button" onClicked={handleDelete} text="Yes"/>
+          <Button className="confirm-delete-button" onClicked={() => handleCloseModal()} text="No" />
         </ButtonWrapper>
       </Modal>
     </ModalWrapper>

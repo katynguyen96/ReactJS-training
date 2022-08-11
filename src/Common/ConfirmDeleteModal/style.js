@@ -6,8 +6,8 @@ const ModalWrapper = styled.div`
   height: 100%;
   width: 100%;
   z-index: 10;
-  right: 1px;
-  top: 2px;
+  right: 0;
+  top: 0;
 `;
 const Modal = styled.div`
   position: fixed;
@@ -36,14 +36,5 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
   margin-top: 50px;
 `;
-const Button = styled.button`
-  cursor: pointer;
-  width: 88px;
-  height: 39px;
-  border: none;
-  font-size: 16px;
-  background-color: ${(props) =>
-    props.yes ? "rgba(2, 88, 255, 0.54)" : "#CCCCCC"};
-  border-radius: 10px;
-`;
-export { ModalWrapper, Modal, Title, Content, ButtonWrapper, Button };
+
+export { ModalWrapper, Modal, Title, Content, ButtonWrapper };

@@ -64,7 +64,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 				/>
 			</Form>
 			<WrapperButton>
-				<Button inputColor="rgba(2, 88, 255, 0.54)" className='modal-button' text='Save' onClicked={ isCreated ? addNewProduct : editProduct}></Button>
+				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ isCreated ? addNewProduct : editProduct}></Button>
 				<Button className='modal-button' text='Close' onClicked={() => handleCloseModal()}></Button>
 			</WrapperButton>
 		</Wrapper>

@@ -21,7 +21,11 @@ export const CommonButton = styled.button`
 	border: none;
 	font-size: 15px;
 	cursor: pointer;
-	background-color: ${props => props.inputColor || "#CCCCCC"}
+	margin-top: 20px;
+	color: #FFF;
+	font-weight: 400;
+	border-radius: 5px;
+	background-color: ${props => props.inputColor || "#6c757d"}
 }
 
 &.card-button {
@@ -68,12 +72,16 @@ export const CommonButton = styled.button`
 }
 
 	&.confirm-delete-button {
+		margin-left: 5px;
+		margin-right:5px;
 		cursor: pointer;
-	  width: 88px;
+		font-weight: 500;
+	  width: 115px;
 	  height: 39px;
 	  border: none;
+	  color: #FFF;
 	  font-size: 16px;
-	  background-color: ${props => props.inputColor || "#CCCCCC"};
-	  border-radius: 10px;
+	  background-color: ${props => props.inputColor || "#c1c1c1"};
+	  border-radius: 5px;
 	}
 `

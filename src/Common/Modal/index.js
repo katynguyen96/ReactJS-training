@@ -1,9 +1,14 @@
-import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton} from './style'
+import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Message} from './style'
 import {useState} from 'react'
 import Button from '../Button'
 
 function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {
 	const [product, setProduct] = useState(theProduct)
+	const [nameErrorMessage, setNameErrorMessage] = useState(false)
+	const [priceErrorMessage, setPriceErrorMessage] = useState(false)
+	const [brandErrorMessage, setBrandErrorMessage] = useState(false)
+	const [imageErrorMessage, setImageErrorMessage] = useState(false)
+
 
 	const handleChange = (e) => {
 		const name = e.target.name
@@ -13,11 +18,25 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	
 	// const [name, setName] = useState(theProduct.productName)
 	const addNewProduct = () => {
-		handleAdd({...product})
+		if(!product.productName){
+			setNameErrorMessage(true)
+		}
+		if(!product.productPrice || Number(product.productPrice) < 0){
+			setPriceErrorMessage(true)
+		}
+		if(!product.productBrand){
+			setBrandErrorMessage(true)
+		}
+		if(!product.productImg){
+			setImageErrorMessage(true)
+		}
+		else {
+			handleAdd({...product})
+		}
 	}
 
 	const editProduct = () => {
-		handleEdit(product)
+			handleEdit(product)
 	}
 
 	const options = [
@@ -38,12 +57,14 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 				value={ product.productName || "" }
 				onChange={handleChange} 
 				/>
+				{nameErrorMessage && <Message>Please enter product name</Message>}
 				<Label>Price</Label>
 				<Input
 					name='productPrice'
 					value={ product.productPrice || "" }
 					onChange={handleChange}
 				/>
+				{priceErrorMessage && <Message>Please enter product price</Message>}
 				<Label>Brand</Label>
 				<Brand
 					name='productBrand' 
@@ -56,12 +77,14 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 						</Value>
 					))}
 				</Brand>
+				{brandErrorMessage && <Message>Please choose product brand</Message>}
 				<Label>Image Link</Label>
 				<Input
 					name='productImg' 
 					value={ product.productImg || "" }
 					onChange={handleChange}
 				/>
+				{imageErrorMessage && <Message>Please enter product image link</Message>}
 			</Form>
 			<WrapperButton>
 				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ isCreated ? addNewProduct : editProduct}></Button>

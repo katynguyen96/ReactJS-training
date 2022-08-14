@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	height: 460px;
 	width: 560px;
 	background: #FFF;
 	border-radius: 5px;
@@ -63,6 +62,12 @@ const WrapperButton = styled.div`
 	justify-content: space-around;
 	margin-top: 25px;
 	border-top: 1px solid #ced4da;
+	margin-bottom: 20px;
+`
+
+const Message = styled.p`
+	color: red;
+	font-size: 14px;
 `
 
 export {
@@ -74,5 +79,6 @@ export {
 	Label,
 	Brand,
 	Value,
-	WrapperButton
+	WrapperButton,
+	Message
 }

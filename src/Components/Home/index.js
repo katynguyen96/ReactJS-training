@@ -14,13 +14,8 @@ function Home () {
 	const [show, setShow] = useState(false)
 
 	const handleAdd = (product) => {
-		if(product.productName && product.productPrice && product.productImg && product.productBrand) {
 			dispatch(actions.addProduct(product, product.id = uuidv4()))
 			handleCloseModal()
-		}
-		else {
-			alert("Please fill all the field")
-		}
 	}
 
 	const handleSearch = (text) => {

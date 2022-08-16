@@ -23,6 +23,7 @@ function reducer(state, action) {
 		case ADD_PRODUCT:
 			return {
 				...state,
+				//add new product into state
 				products: [...state.products, action.payload],
 			}
 
@@ -30,12 +31,14 @@ function reducer(state, action) {
 			const updatedProduct = action.payload
 
 			const updatedProducts = state.products.map((product)=>{
+				//get updated product
 				if(product.id === updatedProduct.id){
 					return updatedProduct
 				}
 				return product
 			})
 
+			//add updated product into products
 			return {
 				...state,
 				products: updatedProducts,
@@ -50,7 +53,9 @@ function reducer(state, action) {
 		case SEARCH_PRODUCT:
 			return {
 				...state,
+				//if search input has value
 				isSearchActive: !!action.payload.length,
+				//create new products to not change the default state
 				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
 			}
 

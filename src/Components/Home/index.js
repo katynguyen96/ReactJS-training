@@ -11,29 +11,36 @@ import { v4 as uuidv4 } from 'uuid'
 function Home () {
 	const [state, dispatch] = useStore()
 
+	//set state for show add new product modal function
 	const [show, setShow] = useState(false)
 
+	//add new product function
 	const handleAdd = (product) => {
 			dispatch(actions.addProduct(product, product.id = uuidv4()))
 			handleCloseModal()
 	}
 
+	//search product function
 	const handleSearch = (text) => {
 		dispatch(actions.searchProduct(text))
 	}
 
+	//fliter product function
 	const handleFilter = (text) => {
 		dispatch(actions.filterProduct(text))
 	}
 
+	//clear filter function
 	const handleClearFilter = () => {
 		dispatch(actions.clearFilter())
 	}
 
+	//show add new modal function
 	const handleShowModal = () => {
 		setShow(true)
 	}
 
+	//close add new modal function
 	const handleCloseModal = () => {
 		setShow(false)
 	} 

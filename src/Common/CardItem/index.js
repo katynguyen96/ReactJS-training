@@ -4,29 +4,36 @@ import Modal from '../Modal'
 import ConfirmDeleteModal from '../ConfirmDeleteModal'
 import {useState} from 'react'
 
-function CardItem ({handleDelete, theProduct, handleEdit }) {
+function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through product array in products componentt
 	const [show, setShow] = useState(false)
 	const [showConfirmModal, setShowConfirmModal] = useState(false)
+
+	//show edit modal function
 	const handleShowModal = () => {
 		setShow(true)
 	}
 
+	//Show confirm delete modal function
 	const handleShowConfirmModal = () => {
 		setShowConfirmModal(true)
 	}
 
+	//Close confirm delete modal function
 	const handleCloseConfirmModal = () => {
 		setShowConfirmModal(false)
 	}
 
+	//close edit modal function
 	const handleCloseModal = () => {
 		setShow(false)
 	}
 
+	//delete product by id
 	const deleteProduct = (id) => {
 		handleDelete(id)
 	}
 
+	//edit product by id
 	const handleEditProduct = (product) => {
 		handleEdit(product)
 		handleCloseModal()

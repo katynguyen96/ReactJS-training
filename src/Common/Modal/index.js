@@ -2,26 +2,43 @@ import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperBu
 import {useState} from 'react'
 import Button from '../Button'
 
-function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {
+function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {//isCreated: set if is create or edit modal
+																																															//theProduct: get form CardItem component	
+	//create state for product detail when click in edit button
 	const [product, setProduct] = useState(theProduct)
+	//create state for error message
 	const [nameErrorMessage, setNameErrorMessage] = useState(false)
 	const [priceErrorMessage, setPriceErrorMessage] = useState(false)
 	const [brandErrorMessage, setBrandErrorMessage] = useState(false)
 	const [imageErrorMessage, setImageErrorMessage] = useState(false)
 
-
+	//get the value when input product details
 	const handleChange = (e) => {
 		const name = e.target.name
 		const value = e.target.value
 		setProduct({...product, [name]:value})
+		//form validation
+		if(value !== '' && name === 'productName'){
+			setNameErrorMessage(false)
+		}
+		if(value !== '' && name === 'productPrice'){
+			setPriceErrorMessage(false)
+		}
+		if(value !== '' && name === 'productBrand'){
+			setBrandErrorMessage(false)
+		}
+		if(value !== '' && name === 'productImg'){
+			setImageErrorMessage(false)
+		}
 	}
 	
-	// const [name, setName] = useState(theProduct.productName)
+	//add new product function
 	const addNewProduct = () => {
+		//form validation
 		if(!product.productName){
 			setNameErrorMessage(true)
 		}
-		if(!product.productPrice || Number(product.productPrice) < 0){
+		if(!product.productPrice || Number(product.productPrice) < 0 ){
 			setPriceErrorMessage(true)
 		}
 		if(!product.productBrand){
@@ -30,15 +47,16 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 		if(!product.productImg){
 			setImageErrorMessage(true)
 		}
-		else {
+		if(product.productName && product.productPrice && product.productBrand && product.productImg){
 			handleAdd({...product})
 		}
 	}
-
+	//edit product function
 	const editProduct = () => {
 			handleEdit(product)
 	}
 
+	//options of filter function
 	const options = [
 		{id:1, value: '', text:'Choose brand'},
 		{id:2, value:'samsung', text:'Samsung'},
@@ -53,7 +71,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 			<Form>
 				<Label>Product Name</Label>
 				<Input
-				name='productName' 
+				name='productName'
 				value={ product.productName || "" }
 				onChange={handleChange} 
 				/>

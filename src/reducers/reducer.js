@@ -9,11 +9,6 @@ import {
 
 const initState = {
 	products: [],
-	id: '',
-	productName: '',
-	productPrice: '',
-	productBrand: '',
-	productImg: '',
 	isSearchActive:false,
 	foundProduct: []
 }

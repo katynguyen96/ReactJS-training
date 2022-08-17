@@ -11,6 +11,11 @@ import { v4 as uuidv4 } from 'uuid'
 function Home () {
 	const [state, dispatch] = useStore()
 
+	const {isSearchActive, foundProduct, products} = state
+	//get currentproduct if search inputs has value get foundProduct (get product when run search and filter function) if not get default products
+
+	const currentProduct = isSearchActive ? foundProduct : products
+
 	//set state for show add new product modal function
 	const [show, setShow] = useState(false)
 
@@ -19,6 +24,14 @@ function Home () {
 			dispatch(actions.addProduct(product, product.id = uuidv4()))
 			handleCloseModal()
 	}
+
+	const handleEdit = (product) => {
+		dispatch(actions.editProduct(product))
+	}
+
+	const handleDelete = (id) => {
+		dispatch(actions.removeProduct(id))
+	}	
 
 	//search product function
 	const handleSearch = (text) => {
@@ -59,7 +72,7 @@ function Home () {
 	  </Search>
 	  <Line>List Product</Line>
 	  <ListItem>
-	  	<Products/>
+	  	<Products handleDelete={handleDelete} handleEdit={handleEdit} currentProduct={currentProduct}/>
 	  </ListItem>
 	  <SideBar handleFilter={handleFilter} handleClearFilter={handleClearFilter}/>
 	</Wrapper>

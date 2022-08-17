@@ -1,30 +1,23 @@
 import CardItem from '../../Common/CardItem'
 import {Wrapper} from './style'
-import {useStore, actions} from '../../store'
 
-function Products () {
-	const [state, dispatch] = useStore()
-	const {isSearchActive, foundProduct, products} = state
-
-	const currentProduct = isSearchActive ? foundProduct : products
-	//get currentproduct if search inputs has value get foundProduct (get product when run search and filter function) if not get default products
-
-
+function Products ({handleDelete, handleEdit, currentProduct}) {
 	//edit product function
-	const handleEdit = (product) => {
-		dispatch(actions.editProduct(product))
+	const handleEditProduct = (product) => {
+		handleEdit(product)
 	}
 
-	//edit product function
-	const handleDelete = (id) => {
-		dispatch(actions.removeProduct(id))
+	//delete product function
+	const deleteProduct = (id) => {
+		handleDelete(id)
 	}
+
 
 	return (
 		<>
 			{currentProduct.map((product)=>(
 				<Wrapper key={product.id}>
-					<CardItem handleDelete={handleDelete} theProduct={product} handleEdit={handleEdit}/>
+					<CardItem handleDelete={deleteProduct} theProduct={product} handleEdit={handleEditProduct}/>
 				</Wrapper>
 			))}
 		</>

@@ -3,7 +3,7 @@ import {useState} from 'react'
 import Button from '../Button'
 
 function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {//isCreated: set if is create or edit modal
-																																															//theProduct: get form CardItem component	
+																																															//theProduct: get from CardItem component	
 	//create state for product detail when click in edit button
 	const [product, setProduct] = useState(theProduct)
 	//create state for error message

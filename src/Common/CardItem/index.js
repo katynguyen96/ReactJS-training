@@ -4,7 +4,7 @@ import Modal from '../Modal'
 import ConfirmDeleteModal from '../ConfirmDeleteModal'
 import {useState} from 'react'
 
-function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through product array in products componentt
+function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through products array in products componentt
 	const [show, setShow] = useState(false)
 	const [showConfirmModal, setShowConfirmModal] = useState(false)
 

@@ -13,6 +13,11 @@ export const CommonButton = styled.button`
 	color: #FFF;
 	border: none;
 	border-radius: 10px;
+	&:hover {
+		background-color: #FFF;
+		color: #0066CC;
+		border: 1px solid #0066CC;
+	}
 };
 
 &.modal-button {

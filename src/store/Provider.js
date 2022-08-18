@@ -13,8 +13,7 @@ function Provider({children}) {
 	useEffect(() => {
 		//set item into localstorage when state change
 		localStorage.setItem('products', JSON.stringify(state))
-		console.log('state has change')
-	}, [state])
+	}, [state.products])
 	return (
 		<Context.Provider value={[state, dispatch]}>
 			{children}

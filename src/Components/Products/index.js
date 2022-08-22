@@ -1,4 +1,4 @@
-import CardItem from '../../Common/CardItem'
+import CardItem from '../CardItem'
 import {Wrapper} from './style'
 
 function Products ({handleDelete, handleEdit, currentProduct}) {

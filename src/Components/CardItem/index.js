@@ -1,7 +1,7 @@
 import  {Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
-import Button from '../Button'
-import Modal from '../Modal'
-import ConfirmDeleteModal from '../ConfirmDeleteModal'
+import Button from '../../Common/Button'
+import Modal from '../../Common/Modal'
+import ConfirmDeleteModal from '../../Common/ConfirmDeleteModal'
 import {useState} from 'react'
 
 function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through products array in products componentt

@@ -78,6 +78,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 				{nameErrorMessage && <Message>Please enter product name</Message>}
 				<Label>Price</Label>
 				<Input
+					type='number'
 					name='productPrice'
 					value={ product.productPrice || "" }
 					onChange={handleChange}

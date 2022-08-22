@@ -9,21 +9,21 @@ import {
   IconBox
 } from "./style";
 
-function ConfirmDeleteModal({ handleCloseModal, handleDelete }) {
+function ConfirmModal({ handleCloseModal, handleFeature, icon, content, title }) {
   return (
     <ModalWrapper>
       <Modal>
         <IconBox>
-          <i className="fas fa-xmark"></i>
+          <i className={icon}></i>
         </IconBox>
-        <Title>Are You Sure?</Title>
-        <Content>Do you really want to delete these records? This process cannot be undone.</Content>
+        <Title>{title}</Title>
+        <Content>{content}</Content>
         <ButtonWrapper>
           <Button className="confirm-delete-button" onClicked={() => handleCloseModal()} text="Close" />
-          <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={handleDelete} text="Delete"/>
+          <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={handleFeature} text="Delete"/>
         </ButtonWrapper>
       </Modal>
     </ModalWrapper>
   );
 }
-export default ConfirmDeleteModal;
+export default ConfirmModal;

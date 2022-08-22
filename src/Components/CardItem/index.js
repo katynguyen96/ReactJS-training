@@ -1,7 +1,7 @@
 import  {Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
 import Button from '../../Common/Button'
 import Modal from '../../Common/Modal'
-import ConfirmDeleteModal from '../../Common/ConfirmDeleteModal'
+import ConfirmModal from '../../Common/ConfirmModal'
 import {useState} from 'react'
 
 function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through products array in products componentt
@@ -52,7 +52,14 @@ function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get t
 			<WrapperButton>
 				<Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit' onClicked={handleShowModal}></Button>
 				{show && <Modal theProduct={theProduct} handleCloseModal={handleCloseModal} text='Edit Product' handleEdit={handleEditProduct}/>}
-				{showConfirmModal && <ConfirmDeleteModal handleCloseModal={handleCloseConfirmModal} handleDelete={() => deleteProduct(theProduct.id)}/>}
+				{showConfirmModal && 
+					<ConfirmModal 
+						icon = "fas fa-xmark"
+						title = "Are You Sure?"
+						content = "Do you really want to delete these records? This process cannot be undone."
+						handleCloseModal={handleCloseConfirmModal} 
+						handleFeature={() => deleteProduct(theProduct.id)}/>
+				}
 				<Button className='card-button' inputColor='#C36C1C' icon='fas fa-trash-alt' onClicked={handleShowConfirmModal}></Button>
 			</WrapperButton>	
 		</>

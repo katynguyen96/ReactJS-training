@@ -10,12 +10,12 @@ This document provides information about Javascript practice. Build Product Mana
 - React hooks
 
 ## Timeline
-14 working days (July 11, 2022, to July 28, 2022)
+22 working days (July 11, 2022, to Aug 24, 2022)
 
 ## Target
 - Build an application for managing product using React
-- Implement storybook
 - Using React Hooks
+- Apply useContext and useReducer for state management
 - Check re-render and using hook to avoid re-render.
 
 ## Reference
@@ -27,11 +27,15 @@ This document provides information about Javascript practice. Build Product Mana
 ```
 git clone https://github.com/katynguyen96/ReactJS-training.git
 ```
-- Step 2: Install dependencies
+- Step 2: checkout branch
+```
+git checkout branch feature/practice
+```
+- Step 3: Install dependencies
 ```
 npm install
 ```
-- Step 3: Run project
+- Step 4: Run project
 ```
 npm start
 ```

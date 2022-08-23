@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 import {useStore, actions} from '../../store'
 import {NavBar, Title, Span, Wrapper, Search, ListItem, Line, Image, Email} from './style.js'
 import SearchBar from '../SearchBar'

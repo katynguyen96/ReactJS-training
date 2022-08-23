@@ -19,13 +19,14 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	
 	//validate form function
 	const validate = (values) => {
+		const image = values.productImg
 		const errors = {}
 		if(!values.productName) {
 			errors.productName = "Product name is required!"
 		}
 		if(!values.productPrice) {
 			errors.productPrice = "Product price is required!"
-		}else if(values.productPrice<0){
+		} else if(values.productPrice<0){
 			errors.productPrice = "Price must be greater than 0"
 		}
 		if(!values.productBrand) {
@@ -33,7 +34,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 		}
 		if(!values.productImg) {
 			errors.productImg = "Product image is required!"
-		}
+		} 
 		return errors
 	}
 

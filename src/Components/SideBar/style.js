@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 	width: 210px;
 	height: 400px;
 	background-color: #333333;
+	margin-left: -8px;
 `
 
 const BrandWrapper = styled.div`

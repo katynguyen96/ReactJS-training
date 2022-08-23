@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 const NavBar = styled.div`
 	display: flex;
-	width:100%;
+	width:102%;
 	height: 80px;
 	background-color: #333333;
+	margin: -8px;
 `
 
 const Title = styled.h1`

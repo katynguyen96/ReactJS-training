@@ -1,5 +1,5 @@
 import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Message} from './style'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Button from '../Button'
 
 function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {//isCreated: set if is create or edit modal
@@ -7,50 +7,53 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	//create state for product detail when click in edit button
 	const [product, setProduct] = useState(theProduct)
 	//create state for error message
-	const [nameErrorMessage, setNameErrorMessage] = useState(false)
-	const [priceErrorMessage, setPriceErrorMessage] = useState(false)
-	const [brandErrorMessage, setBrandErrorMessage] = useState(false)
-	const [imageErrorMessage, setImageErrorMessage] = useState(false)
+	const [formErrors, setFormErrors] = useState({})
+	//create state to check submit
+	const [isSubmit, setIsSubmit] = useState(false)
 
-	//get the value when input product details
+	//get the value of the input
 	const handleChange = (e) => {
-		const name = e.target.name
-		const value = e.target.value
+		const {name, value} = e.target
 		setProduct({...product, [name]:value})
-		//form validation
-		if(value !== '' && name === 'productName'){
-			setNameErrorMessage(false)
-		}
-		if(value !== '' && name === 'productPrice'){
-			setPriceErrorMessage(false)
-		}
-		if(value !== '' && name === 'productBrand'){
-			setBrandErrorMessage(false)
-		}
-		if(value !== '' && name === 'productImg'){
-			setImageErrorMessage(false)
-		}
 	}
 	
+	//validate form function
+	const validate = (values) => {
+		const errors = {}
+		if(!values.productName) {
+			errors.productName = "Product name is required!"
+		}
+		if(!values.productPrice) {
+			errors.productPrice = "Product price is required!"
+		}else if(values.productPrice<0){
+			errors.productPrice = "Price must be greater than 0"
+		}
+		if(!values.productBrand) {
+			errors.productBrand = "Product brand is required!"
+		}
+		if(!values.productImg) {
+			errors.productImg = "Product image is required!"
+		}
+		return errors
+	}
+
 	//add new product function
-	const addNewProduct = () => {
+	const addNewProduct = (e) => {
 		//form validation
-		if(!product.productName){
-			setNameErrorMessage(true)
-		}
-		if(!product.productPrice || Number(product.productPrice) < 0 ){
-			setPriceErrorMessage(true)
-		}
-		if(!product.productBrand){
-			setBrandErrorMessage(true)
-		}
-		if(!product.productImg){
-			setImageErrorMessage(true)
-		}
-		if(product.productName && product.productPrice && product.productBrand && product.productImg){
+		e.preventDefault()
+		//push erros into form errors
+		setFormErrors(validate(product))
+		setIsSubmit(true)
+	}
+
+	useEffect(() => {
+		//check if errors has value and form is submit
+		if(Object.keys(formErrors).length === 0 && isSubmit){
+			//add product function
 			handleAdd({...product})
 		}
-	}
+	},[formErrors])
+
 	//edit product function
 	const editProduct = () => {
 			handleEdit(product)
@@ -75,7 +78,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 				value={ product.productName || "" }
 				onChange={handleChange} 
 				/>
-				{nameErrorMessage && <Message>Please enter product name</Message>}
+				<Message>{formErrors.productName}</Message>
 				<Label>Price</Label>
 				<Input
 					type='number'
@@ -83,7 +86,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 					value={ product.productPrice || "" }
 					onChange={handleChange}
 				/>
-				{priceErrorMessage && <Message>Please enter product price</Message>}
+				<Message>{formErrors.productPrice}</Message>
 				<Label>Brand</Label>
 				<Brand
 					name='productBrand' 
@@ -96,14 +99,14 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 						</Value>
 					))}
 				</Brand>
-				{brandErrorMessage && <Message>Please choose product brand</Message>}
+				<Message>{formErrors.productBrand}</Message>
 				<Label>Image Link</Label>
 				<Input
 					name='productImg' 
 					value={ product.productImg || "" }
 					onChange={handleChange}
 				/>
-				{imageErrorMessage && <Message>Please enter product image link</Message>}
+				<Message>{formErrors.productImg}</Message>
 			</Form>
 			<WrapperButton>
 				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ isCreated ? addNewProduct : editProduct}></Button>

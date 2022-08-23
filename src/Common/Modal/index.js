@@ -19,7 +19,6 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	
 	//validate form function
 	const validate = (values) => {
-		const image = values.productImg
 		const errors = {}
 		if(!values.productName) {
 			errors.productName = "Product name is required!"

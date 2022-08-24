@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {useStore, actions} from '../../store'
-import {NavBar, Title, Span, Wrapper, Search, ListItem, Line, Image, Email} from './style.js'
+import {NavBar, Title, Span, Search, ListProduct, Line, Image, Email} from './style.js'
 import SearchBar from '../SearchBar'
 import SideBar from '../SideBar'
-import Button from '../../Common/Button'
-import Modal from '../../Common/Modal'
+import Button from '../Common/Button'
+import Modal from '../Common/Modal'
 import Products from '../Products'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -59,7 +59,7 @@ function Home () {
 	} 
 
 	return (
-	<Wrapper>
+	<>
 		<Search>
 				<NavBar>
 	  			<Title><Span>m</Span>y<Span>p</Span>roduct</Title>
@@ -71,11 +71,11 @@ function Home () {
 	  		{show && <Modal handleCloseModal={handleCloseModal} isCreated='true' text='Create Product' handleAdd={handleAdd}/>}
 	  </Search>
 	  <Line>List Product</Line>
-	  <ListItem>
+	  <ListProduct>
 	  	<Products handleDelete={handleDelete} handleEdit={handleEdit} currentProduct={currentProduct}/>
-	  </ListItem>
+	  </ListProduct>
 	  <SideBar handleFilter={handleFilter} handleClearFilter={handleClearFilter}/>
-	</Wrapper>
+	</>
 	)
 }
 

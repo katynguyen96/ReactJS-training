@@ -1,10 +1,10 @@
 import  {Image, ItemInfo, Name, Info, WrapperButton, ImageWarapper} from './style'
-import Button from '../../Common/Button'
-import Modal from '../../Common/Modal'
-import ConfirmModal from '../../Common/ConfirmModal'
+import Button from '../Common/Button'
+import Modal from '../Common/Modal'
+import ConfirmModal from '../Common/ConfirmModal'
 import {useState} from 'react'
 
-function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through products array in products componentt
+function CardProduct ({handleDelete, theProduct, handleEdit }) {//theProduct: get the product when map through products array in products componentt
 	const [show, setShow] = useState(false)
 	const [showConfirmModal, setShowConfirmModal] = useState(false)
 
@@ -66,4 +66,4 @@ function CardItem ({handleDelete, theProduct, handleEdit }) {//theProduct: get t
 	)
 }
 
-export default CardItem
+export default CardProduct

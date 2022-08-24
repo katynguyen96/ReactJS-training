@@ -46,7 +46,7 @@ const Search = styled.div`
 	display: flex;
 `
 
-const ListItem = styled.div`
+const ListProduct = styled.div`
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
@@ -68,7 +68,7 @@ export {
 	Span,
 	Wrapper,
 	Search,
-	ListItem,
+	ListProduct,
 	Line,
 	Image,
 	Email

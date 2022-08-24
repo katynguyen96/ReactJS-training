@@ -1,5 +1,5 @@
 import {Title, Wrapper, BrandName, BrandWrapper} from './style'
-import Button from '../../Common/Button'
+import Button from '../Common/Button'
 
 function SideBar ({handleFilter, handleClearFilter}) {
 

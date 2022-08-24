@@ -5,26 +5,26 @@ import {
 	SEARCH_PRODUCT,
 	FILTER_PRODUCT,
 	CLEAR_FILTER
-} from '../store/constants'
+} from '../constants/constants'
 
-export const addProduct = payload => ({
+export const addProduct = product => ({
 	type: ADD_PRODUCT,
-	payload
+	product
 })
 
-export const editProduct = payload => ({
+export const editProduct = product => ({
 	type: EDIT_PRODUCT,
-	payload
+	product
 })
 
-export const removeProduct = payload => ({
+export const removeProduct = id => ({
 	type: REMOVE_PRODUCT,
-	payload
+	id
 })
 
-export const searchProduct = payload => ({
+export const searchProduct = input => ({
 	type: SEARCH_PRODUCT,
-	payload
+	input
 })
 
 export const filterProduct = payload => ({

@@ -1,4 +1,4 @@
-import CardItem from '../CardItem'
+import CardProduct from '../CardProduct'
 import {Wrapper} from './style'
 
 function Products ({handleDelete, handleEdit, currentProduct}) {
@@ -17,7 +17,7 @@ function Products ({handleDelete, handleEdit, currentProduct}) {
 		<>
 			{currentProduct.map((product)=>(
 				<Wrapper key={product.id}>
-					<CardItem handleDelete={deleteProduct} theProduct={product} handleEdit={handleEditProduct}/>
+					<CardProduct handleDelete={deleteProduct} theProduct={product} handleEdit={handleEditProduct}/>
 				</Wrapper>
 			))}
 		</>

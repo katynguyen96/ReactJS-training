@@ -5,9 +5,9 @@ import {
 	SEARCH_PRODUCT,
 	FILTER_PRODUCT,
 	CLEAR_FILTER
-} from '../store/constants'
+} from '../constants/constants'
 
-const initState = {
+export const initState = {
 	products: [],
 	isSearchActive:false,
 	foundProduct: []
@@ -19,11 +19,11 @@ function reducer(state, action) {
 			return {
 				...state,
 				//add new product into state
-				products: [...state.products, action.payload],
+				products: [...state.products, action.product],
 			}
 
 		case EDIT_PRODUCT:
-			const updatedProduct = action.payload
+			const updatedProduct = action.product
 
 			const updatedProducts = state.products.map((product)=>{
 				//get updated product
@@ -42,16 +42,16 @@ function reducer(state, action) {
 		case REMOVE_PRODUCT:
 			return {
 				...state,
-				products: state.products.filter(product => product.id !== action.payload)
+				products: state.products.filter(product => product.id !== action.id)
 			}
 
 		case SEARCH_PRODUCT:
 			return {
 				...state,
 				//if search input has value
-				isSearchActive: !!action.payload.length,
+				isSearchActive: !!action.input.length,
 				//create new products to not change the default state
-				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
+				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.input.toLowerCase()) !== -1)		
 			}
 
 		case FILTER_PRODUCT:
@@ -68,9 +68,8 @@ function reducer(state, action) {
 			}
 			
 		default:
-			throw new Error('Invalid action')
+			return state
 	}
 }
 
-export {initState}
 export default reducer

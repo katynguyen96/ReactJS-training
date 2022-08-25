@@ -38,7 +38,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	}
 
 	//add new product function
-	const addNewProduct = (e) => {
+	const handleSubmit = (e) => {
 		//form validation
 		e.preventDefault()
 		//push erros into form errors
@@ -49,15 +49,14 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 	useEffect(() => {
 		//check if errors has value and form is submit
 		if(Object.keys(formErrors).length === 0 && isSubmit){
-			//add product function
-			handleAdd({...product})
+			//set if modal is edit or create
+			if(isCreated){
+				handleAdd({...product})
+			} else {
+				handleEdit(product)
+			}
 		}
 	},[formErrors])
-
-	//edit product function
-	const editProduct = () => {
-			handleEdit(product)
-	}
 
 	//options of filter function
 	const options = [
@@ -109,7 +108,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 				<Message>{formErrors.productImg}</Message>
 			</Form>
 			<WrapperButton>
-				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ isCreated ? addNewProduct : editProduct}></Button>
+				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ handleSubmit }></Button>
 				<Button className='modal-button' text='Close' onClicked={() => handleCloseModal()}></Button>
 			</WrapperButton>
 		</Wrapper>

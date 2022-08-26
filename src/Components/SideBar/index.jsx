@@ -1,7 +1,7 @@
 import {Title, Wrapper, BrandName, BrandWrapper} from './style'
 import Button from '../Common/Button'
 
-function SideBar ({handleFilter, handleClearFilter}) {
+const SideBar = ({handleFilter, handleClearFilter}) => {
 
 	const options = [
 		{value:'samsung', text:'Samsung'},

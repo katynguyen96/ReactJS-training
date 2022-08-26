@@ -1,6 +1,6 @@
 import Home from './Components/Home'
 
-function App() {
+const App = () => {
   return (
     <Home/>
   );

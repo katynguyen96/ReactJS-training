@@ -2,7 +2,7 @@ import {useReducer, useEffect} from 'react'
 import Context from './Context'
 import reducer, {initState} from '../reducers/reducer'
 
-function Provider({children}) {
+const Provider = ({children}) => {
 
 	const [state, dispatch] = useReducer(reducer, initState , () => {
 		//get item in localstorage

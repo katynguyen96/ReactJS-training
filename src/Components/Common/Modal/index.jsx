@@ -2,7 +2,7 @@ import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperBu
 import {useState, useEffect} from 'react'
 import Button from '../Button'
 
-function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) {//isCreated: set if is create or edit modal
+const Modal = ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) => {//isCreated: set if is create or edit modal
 																																															//theProduct: get from CardItem component	
 	//create state for product detail when click in edit button
 	const [product, setProduct] = useState(theProduct)

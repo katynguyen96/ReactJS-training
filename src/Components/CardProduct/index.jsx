@@ -31,6 +31,7 @@ function CardProduct ({handleDelete, theProduct, handleEdit }) {//theProduct: ge
 	//delete product by id
 	const deleteProduct = (id) => {
 		handleDelete(id)
+		setShowConfirmModal(false)
 	}
 
 	//edit product by id

@@ -46,6 +46,11 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 		setIsSubmit(true)
 	}
 
+	//close modal function
+	const closeModal = () => {
+		handleCloseModal()
+	}
+
 	useEffect(() => {
 		//check if errors has value and form is submit
 		if(Object.keys(formErrors).length === 0 && isSubmit){
@@ -109,7 +114,7 @@ function Modal ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePr
 			</Form>
 			<WrapperButton>
 				<Button inputColor="#007bff" className='modal-button' text='Save' onClicked={ handleSubmit }></Button>
-				<Button className='modal-button' text='Close' onClicked={() => handleCloseModal()}></Button>
+				<Button className='modal-button' text='Close' onClicked={closeModal}></Button>
 			</WrapperButton>
 		</Wrapper>
 	</ModalWrapper>	

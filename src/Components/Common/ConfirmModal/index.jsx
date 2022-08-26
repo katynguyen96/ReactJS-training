@@ -10,6 +10,12 @@ import {
 } from "./style";
 
 function ConfirmModal({ handleCloseModal, handleFeature, icon, content, title }) {
+
+  //Close Confirm Modal
+  const handleCloseConfirmModal = () => {
+    handleCloseModal()
+  }
+
   return (
     <ModalWrapper>
       <Modal>
@@ -19,7 +25,7 @@ function ConfirmModal({ handleCloseModal, handleFeature, icon, content, title })
         <Title>{title}</Title>
         <Content>{content}</Content>
         <ButtonWrapper>
-          <Button className="confirm-delete-button" onClicked={() => handleCloseModal()} text="Close" />
+          <Button className="confirm-delete-button" onClicked={handleCloseConfirmModal} text="Close" />
           <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={handleFeature} text="Delete"/>
         </ButtonWrapper>
       </Modal>

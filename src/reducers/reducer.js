@@ -10,7 +10,7 @@ import {
 export const initState = {
 	products: [],
 	isSearchActive:false,
-	foundProduct: []
+	filterProduct: []
 }
 
 const reducer = (state, action) => {
@@ -51,14 +51,14 @@ const reducer = (state, action) => {
 				//if search input has value
 				isSearchActive: !!action.input.length,
 				//create new products to not change the default state
-				foundProduct: state.products.filter(product => product.productName.toLowerCase().search(action.input.toLowerCase()) !== -1)		
+				filterProduct: state.products.filter(product => product.productName.toLowerCase().search(action.input.toLowerCase()) !== -1)		
 			}
 
 		case FILTER_PRODUCT:
 			return {
 				...state,
 				isSearchActive: true,
-				foundProduct: state.products.filter(product => product.productBrand.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
+				filterProduct: state.products.filter(product => product.productBrand.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
 			}
 
 		case CLEAR_FILTER:

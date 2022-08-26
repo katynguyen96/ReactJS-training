@@ -9,18 +9,28 @@ function SideBar ({handleFilter, handleClearFilter}) {
 		{value:'vivo', text:'Vivo'},
 	]
 
+	//Filter function
+	const filterProductBrand = (e) => {
+		handleFilter(e.target.getAttribute('value'))
+	}
+
+	//clear filter function
+	const clearFilter = () => {
+		handleClearFilter()
+	}
+
 	return (
 		<Wrapper>
 			<Title>Filter</Title>
 			<Title>Brand</Title>
 			<BrandWrapper>
 				{options.map(option=>(
-						<BrandName key={option.value} value={option.value} onClick={(e) => handleFilter(e.target.getAttribute('value'))}>
+						<BrandName key={option.value} value={option.value} onClick={filterProductBrand}>
 							{option.text}
 						</BrandName>
 					))}
 			</BrandWrapper>
-			<Button className='clear-filter-button' text='Clear Filter' onClicked={() => handleClearFilter()}></Button>
+			<Button className='clear-filter-button' text='Clear Filter' onClicked={clearFilter}></Button>
 		</Wrapper>
 	)
 }

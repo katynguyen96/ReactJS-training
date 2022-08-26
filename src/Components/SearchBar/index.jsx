@@ -1,6 +1,6 @@
 import {InputWrapper, SearchInput} from './style.js'
 
-function SearchBar ({handleSearch}) {
+const SearchBar = ({handleSearch}) => {
 
 	const searchProductName = (e) => {
 		handleSearch(e.target.value)

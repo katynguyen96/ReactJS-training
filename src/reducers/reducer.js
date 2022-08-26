@@ -13,7 +13,7 @@ export const initState = {
 	foundProduct: []
 }
 
-function reducer(state, action) {
+const reducer = (state, action) => {
 	switch (action.type) {
 		case ADD_PRODUCT:
 			return {

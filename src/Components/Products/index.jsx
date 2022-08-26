@@ -1,7 +1,7 @@
 import CardProduct from '../CardProduct'
 import {Wrapper} from './style'
 
-function Products ({handleDelete, handleEdit, currentProduct}) {
+const Products = ({handleDelete, handleEdit, currentProduct}) => {
 	//edit product function
 	const handleEditProduct = (product) => {
 		handleEdit(product)

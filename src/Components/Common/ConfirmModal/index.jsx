@@ -9,7 +9,7 @@ import {
   IconBox
 } from "./style";
 
-function ConfirmModal({ handleCloseModal, handleFeature, icon, content, title }) {
+const ConfirmModal = ({ handleCloseModal, handleFeature, icon, content, title }) => {
 
   //Close Confirm Modal
   const handleCloseConfirmModal = () => {

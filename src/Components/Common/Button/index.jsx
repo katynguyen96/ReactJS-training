@@ -1,5 +1,5 @@
 import {CommonButton} from './style'
-function Button ({onClicked, text, className, icon, inputColor}) {
+const Button = ({onClicked, text, className, icon, inputColor}) => {
 	return (
 		<CommonButton inputColor={inputColor} onClick={onClicked} className={className}>
 			{text} <i className={icon}></i>

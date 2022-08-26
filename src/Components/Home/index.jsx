@@ -8,7 +8,7 @@ import Modal from '../Common/Modal'
 import Products from '../Products'
 import { v4 as uuidv4 } from 'uuid'
 
-function Home () {
+const Home = () => {
 	const [state, dispatch] = useStore()
 
 	const {isSearchActive, foundProduct, products} = state

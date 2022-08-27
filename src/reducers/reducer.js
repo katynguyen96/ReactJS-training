@@ -25,13 +25,10 @@ const reducer = (state, action) => {
 		case EDIT_PRODUCT:
 			const updatedProduct = action.product
 
-			const updatedProducts = state.products.map((product)=>{
+			const updatedProducts = state.products.map((product)=>
 				//get updated product
-				if(product.id === updatedProduct.id){
-					return updatedProduct
-				}
-				return product
-			})
+				 product.id === updatedProduct.id ? updatedProduct : product
+			)
 
 			//add updated product into products
 			return {

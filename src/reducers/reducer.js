@@ -52,10 +52,15 @@ const reducer = (state, action) => {
 			}
 
 		case FILTER_PRODUCT:
+			const listChecked = action.payload;
+      // check includes brand is true,then filter items
+      const filterList = state.products.filter((item) =>
+        listChecked.includes(item.productBrand)
+      );
 			return {
 				...state,
 				isSearchActive: true,
-				filterProduct: state.products.filter(product => product.productBrand.toLowerCase().search(action.payload.toLowerCase()) !== -1)		
+				filterProduct: filterList
 			}
 
 		case CLEAR_FILTER:

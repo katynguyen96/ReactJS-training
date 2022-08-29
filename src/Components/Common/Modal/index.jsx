@@ -1,6 +1,7 @@
 import {ModalWrapper,Wrapper, Form, Title, Label, Input, Brand, Value, WrapperButton, Message} from './style'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import Button from '../Button'
+import {brandOptions} from '../../../constants/constants'
 
 const Modal = ({text, handleAdd, isCreated, handleCloseModal, handleEdit, theProduct = {}}) => {//isCreated: set if is create or edit modal
 																																															//theProduct: get from CardItem component	
@@ -8,8 +9,6 @@ const Modal = ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePro
 	const [product, setProduct] = useState(theProduct)
 	//create state for error message
 	const [formErrors, setFormErrors] = useState({})
-	//create state to check submit
-	const [isSubmit, setIsSubmit] = useState(false)
 
 	//get the value of the input
 	const handleChange = (e) => {
@@ -18,58 +17,47 @@ const Modal = ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePro
 	}
 	
 	//validate form function
-	const validate = (values) => {
+	const validate = () => {
 		const errors = {}
-		if(!values.productName) {
+		if(!product.productName) {
 			errors.productName = "Product name is required!"
 		}
-		if(!values.productPrice) {
+		if(!product.productPrice) {
 			errors.productPrice = "Product price is required!"
-		} else if(values.productPrice<0){
+		} else if(product.productPrice<0){
 			errors.productPrice = "Price must be greater than 0"
 		}
-		if(!values.productBrand) {
+		if(!product.productBrand) {
 			errors.productBrand = "Product brand is required!"
 		}
-		if(!values.productImg) {
+		if(!product.productImg) {
 			errors.productImg = "Product image is required!"
 		} 
-		return errors
+		setFormErrors(errors)
+		if(Object.keys(errors).length > 0) 
+			return false
+		else 
+			return true
 	}
 
 	//add new product function
 	const handleSubmit = (e) => {
 		//form validation
 		e.preventDefault()
-		//push erros into form errors
-		setFormErrors(validate(product))
-		setIsSubmit(true)
+		const isValid = validate()
+		if(!isValid) return
+		//set is create new modal or edit modal
+		if(isCreated) {
+			handleAdd({...product})
+		} else {
+			handleEdit(product)
+		}
 	}
 
 	//close modal function
 	const closeModal = () => {
 		handleCloseModal()
 	}
-
-	useEffect(() => {
-		//check if errors has value and form is submit
-		if(Object.keys(formErrors).length === 0 && isSubmit){
-			//set if modal is edit or create
-			if(isCreated){
-				handleAdd({...product})
-			} else {
-				handleEdit(product)
-			}
-		}
-	},[formErrors])
-
-	//options of filter function
-	const options = [
-		{id:1, value: '', text:'Choose brand'},
-		{id:2, value:'samsung', text:'Samsung'},
-		{id:3, value:'iphone', text:'Iphone'},
-		{id:4, value:'vivo', text:'Vivo'},
-	]
 
 	return (
 	<ModalWrapper>
@@ -97,7 +85,7 @@ const Modal = ({text, handleAdd, isCreated, handleCloseModal, handleEdit, thePro
 					value={ product.productBrand || "" }
 					onChange={handleChange}
 				>
-					{options.map(option=>(
+					{brandOptions.map(option=>(
 						<Value key={option.id} value={option.value}>
 							{option.text}
 						</Value>

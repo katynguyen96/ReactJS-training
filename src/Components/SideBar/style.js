@@ -12,31 +12,51 @@ const Wrapper = styled.div`
 	margin-left: -8px;
 `
 
-const BrandWrapper = styled.div`
-	margin-left: 55px;
-	margin-top: -20px;
-	width: 70px;
-`
-
 const Title = styled.p`
 	font-size: 18px;
-	margin-left: 20px;
-	width: 70px;
+	margin-left: 14px;
 	color: #FFFFFF;
 	text-transform: uppercase;
 `
-const BrandName = styled.p`
-	cursor: pointer;
-	width: 20px;
+
+const OptionTitle = styled.p`
+	font-size: 14px;
+	margin-left: 35px;
+	width: 70px;
 	color: #FFFFFF;
-	&:hover {
-		color: #FF7129;
-	}
+	text-transform: uppercase;
+	margin-top: -5px;
 `
+
+const BrandName = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+`;
+
+
+const CheckBox = styled.input`
+  border-radius: 5px;
+  cursor: pointer;
+`;
+const Label = styled.label`
+  font-size: 13px;
+  width: 120px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  padding-top: 9px;
+  padding-left: 26px;
+  color: #FFF;
+`;
 
 export {
 	Title,
 	Wrapper,
 	BrandName,
-	BrandWrapper
+	OptionTitle,
+	CheckBox,
+	Label
 }

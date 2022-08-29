@@ -48,12 +48,13 @@ export const CommonButton = styled.button`
 	cursor: pointer;
 	border-radius: 5px;
 	border: none;
+	margin-top: 10px;
 	&::before {
 		content:'';
 		position: absolute;
 		left:13px;
 		right:17px;
-		bottom: 158px;
+		bottom: 170px;
 		height: 2px;
 		background-color: #0099FF;
 		transition: transform 300ms ease-in-out;

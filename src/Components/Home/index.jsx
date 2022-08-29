@@ -14,7 +14,7 @@ const Home = () => {
 	const {isSearchActive, filterProduct, products} = state
 	//get currentproduct if search inputs has value get foundProduct (get product when run search and filter function) if not get default products
 
-	const currentProduct = isSearchActive ? filterProduct : products
+	const currentProduct = isSearchActive && filterProduct.length>0 ? filterProduct : products
 
 	//set state for show add new product modal function
 	const [show, setShow] = useState(false)

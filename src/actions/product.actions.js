@@ -4,7 +4,6 @@ import {
   REMOVE_PRODUCT,
   SEARCH_PRODUCT,
   FILTER_PRODUCT,
-  CLEAR_FILTER
 } from '../constants/constants'
 
 export const addProduct = product => ({
@@ -32,8 +31,4 @@ export const filterProduct = payload => ({
   payload
 })
 
-export const clearFilter = payload => ({
-  type: CLEAR_FILTER,
-  payload
-})
 

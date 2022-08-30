@@ -1,35 +1,36 @@
 import Button from '../Button'
 
 import {
-  ModalWrapper,
-  Modal,
-  Title,
-  Content,
-  ButtonWrapper,
-  IconBox
-} from "./style";
+  StyledModalWrapper, 
+  StyledModal, 
+  StyledTitle, 
+  StyledContent, 
+  StyledButtonWrapper, 
+  StyledIconBox
+} from "./style"
 
-const ConfirmModal = ({ handleCloseModal, handleFeature, icon, content, title }) => {
+const ConfirmModal = ({ onCloseModal, onFeature, icon, content, title }) => {
 
   //Close Confirm Modal
   const handleCloseConfirmModal = () => {
-    handleCloseModal()
+    onCloseModal()
   }
 
   return (
-    <ModalWrapper>
-      <Modal>
-        <IconBox>
+    <StyledModalWrapper>
+      <StyledModal>
+        <StyledIconBox>
           <i className={icon}></i>
-        </IconBox>
-        <Title>{title}</Title>
-        <Content>{content}</Content>
-        <ButtonWrapper>
+        </StyledIconBox>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledContent>{content}</StyledContent>
+        <StyledButtonWrapper>
           <Button className="confirm-delete-button" onClicked={handleCloseConfirmModal} text="Close" />
-          <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={handleFeature} text="Delete"/>
-        </ButtonWrapper>
-      </Modal>
-    </ModalWrapper>
+          <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={onFeature} text="Delete"/>
+        </StyledButtonWrapper>
+      </StyledModal>
+    </StyledModalWrapper>
   );
 }
+
 export default ConfirmModal;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const NavBar = styled.div`
+const StyledNavBar = styled.div`
   display: flex;
   width:100%;
   height: 80px;
@@ -8,7 +8,7 @@ const NavBar = styled.div`
   // margin: -8px;
 `
 
-const Title = styled.h1`
+const StyledTitle = styled.h1`
   text-align: left;
   margin-left: 50px;
   font-size: 28px;
@@ -17,7 +17,7 @@ const Title = styled.h1`
   margin-top: 20px;
 `
 
-const Image = styled.div`
+const StyledImage = styled.div`
   align-items: left;
   width: 50px;
   height: 50px;
@@ -29,25 +29,25 @@ const Image = styled.div`
   right: 190px;
 `
 
-const Email = styled.p`
+const StyledEmail = styled.p`
   color: #FFF;
   position: absolute;
   right: 40px;
   margin-top: 27px;
 `
 
-const Span = styled.span`
+const StyledSpan = styled.span`
   text-transform: uppercase;
 `
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   width: 100%;
   margin: auto;
 `
-const Search = styled.div`
+const StyledSearch = styled.div`
   display: flex;
 `
 
-const ListProduct = styled.div`
+const StyledListProduct = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -56,7 +56,7 @@ const ListProduct = styled.div`
   margin-left: 250px;
   margin-bottom: 40px;
 `
-const Line = styled.h2`
+const StyledLine = styled.h2`
   font-size: 22px;
   margin-left: 250px;
   margin-top: 30px;
@@ -64,13 +64,13 @@ const Line = styled.h2`
 `
 
 export {
-  NavBar,
-  Title,
-  Span,
-  Wrapper,
-  Search,
-  ListProduct,
-  Line,
-  Image,
-  Email
+  StyledNavBar,
+  StyledTitle,
+  StyledSpan,
+  StyledWrapper,
+  StyledSearch,
+  StyledListProduct,
+  StyledLine,
+  StyledImage,
+  StyledEmail
 }

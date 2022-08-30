@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   border-radius: 15px;
   width: 200px;
   height: auto;
@@ -13,5 +13,5 @@ const Wrapper = styled.div`
 `
 
 export {
-  Wrapper
+  StyledWrapper
 }

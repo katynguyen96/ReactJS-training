@@ -41,31 +41,6 @@ export const CommonButton = styled.button`
   color: ${props => props.inputColor || "#CCCCCC"};
 }
 
-&.clear-filter-button {
-  width: 180px;
-  height: 30px;
-  margin-left: 13px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
-  &::before {
-    content:'';
-    position: absolute;
-    left:13px;
-    right:17px;
-    bottom: 170px;
-    height: 2px;
-    background-color: #0099FF;
-    transition: transform 300ms ease-in-out;
-    transform: scaleX(0);
-  }
-
-  &:hover::before, &:focus::before {
-    transform: scaleX(1);
-  }
-}
-
   &.search-button {
     font-size: 15px;
     margin-left: 7px;

@@ -4,7 +4,6 @@ import {
   REMOVE_PRODUCT,
   SEARCH_PRODUCT,
   FILTER_PRODUCT,
-  CLEAR_FILTER
 } from '../constants/constants'
 
 export const initState = {
@@ -48,7 +47,7 @@ const reducer = (state, action) => {
         //if search input has value
         isSearchActive: !!action.input.length,
         //create new products to not change the default state
-        filterProduct: state.products.filter(product => product.productName.toLowerCase().search(action.input.toLowerCase()) !== -1)    
+        filterProduct: state.products.filter(product => product.productName.toLowerCase().search(action.input.toLowerCase().trim()) !== -1)    
       }
 
     case FILTER_PRODUCT:
@@ -61,12 +60,6 @@ const reducer = (state, action) => {
         ...state,
         isSearchActive: true,
         filterProduct: filterList
-      }
-
-    case CLEAR_FILTER:
-      return {
-        ...state,
-        isSearchActive: false
       }
       
     default:

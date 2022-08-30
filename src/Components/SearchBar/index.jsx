@@ -1,15 +1,22 @@
-import {InputWrapper, SearchInput} from './style.js'
+import {
+  StyledInputWrapper,
+  StyledSearchInput
+} from './style.js'
+import {useStore, actions} from '../../store'
+const SearchBar = () => {
+  //get global state
+	const [state, dispatch] = useStore()
 
-const SearchBar = ({handleSearch}) => {
-
-  const searchProductName = (e) => {
-    handleSearch(e.target.value)
+  //search product function
+  const handleSearch = (e) => {
+    dispatch(actions.searchProduct(e.target.value))
   }
 
   return (
-    <InputWrapper>
-      <SearchInput placeholder='Search...' onChange={searchProductName}/>
-    </InputWrapper>
+    <StyledInputWrapper>
+      <StyledSearchInput placeholder='Search...' onChange={handleSearch}/>
+    </StyledInputWrapper>
   )
 }
+
 export default SearchBar

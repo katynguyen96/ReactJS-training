@@ -9,7 +9,7 @@ const ModalWrapper = styled.div`
   top: 0;
   z-index: 10;
 `
-
+ 
 const Modal = styled.div`
   position: fixed;
   width: 400px;
@@ -26,6 +26,7 @@ const Title = styled.p`
   font-weight: 400;
   font-size: 28px;
   color: #636363;
+  margin-top: 20px;
 `
 
 const Content = styled.p`
@@ -33,6 +34,7 @@ const Content = styled.p`
   font-weight: 400;
   font-size: 18px;
   color: #999;
+  margin-top: 16px;
 `
 
 const ButtonWrapper = styled.div`
@@ -40,7 +42,7 @@ const ButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `
 const IconBox = styled.div`
   width: 80px;

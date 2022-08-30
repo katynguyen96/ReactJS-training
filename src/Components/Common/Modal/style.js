@@ -9,13 +9,13 @@ const ModalWrapper = styled.div`
   right: 0;
   bottom: 0;
 `
-
+ 
 const Wrapper = styled.div`
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 560px;
+	width: 540px;
 	background: #FFF;
 	border-radius: 5px;
 `
@@ -24,15 +24,18 @@ const Title = styled.p`
 	font-size: 26px;
 	font-weight: 500;
 	text-align: center;
+	margin-top: 15px;
 `
 
 const Form = styled.form`
 	margin-left: 35px;
+	margin-top: 10px;
 `
 
 const Label = styled.p`
 	font-size: 16px;
 	margin-bottom: 8px;
+	margin-top: 20px;
 `
 
 const Input = styled.input`
@@ -68,6 +71,7 @@ const WrapperButton = styled.div`
 const Message = styled.p`
 	color: red;
 	font-size: 14px;
+	margin-top: 5px;
 `
 
 export {

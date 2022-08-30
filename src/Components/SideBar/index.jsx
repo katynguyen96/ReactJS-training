@@ -4,6 +4,7 @@ import {useState} from 'react'
 
 const SideBar = ({handleFilter, handleClearFilter}) => {
   const [checked, setChecked] = useState([]);
+
 	const options = ["samsung", "iphone", "vivo"];
 
 	//Filter function

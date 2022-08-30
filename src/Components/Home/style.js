@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const NavBar = styled.div`
 	display: flex;
-	width:102%;
+	width:100%;
 	height: 80px;
 	background-color: #333333;
-	margin: -8px;
+	// margin: -8px;
 `
 
 const Title = styled.h1`
@@ -14,6 +14,7 @@ const Title = styled.h1`
 	font-size: 28px;
 	margin-right: 50px;
 	color: #FFF;
+	margin-top: 20px;
 `
 
 const Image = styled.div`
@@ -54,12 +55,12 @@ const ListProduct = styled.div`
 	margin-right: 150px;
 	margin-left: 250px;
 	margin-bottom: 40px;
-	margin-top: -10px;
 `
 const Line = styled.h2`
 	font-size: 22px;
 	margin-left: 250px;
 	margin-top: 30px;
+	font-weight: bold;
 `
 
 export {

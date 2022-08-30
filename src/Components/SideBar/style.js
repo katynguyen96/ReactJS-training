@@ -1,36 +1,36 @@
 import styled from 'styled-components'
 
 
-const Wrapper = styled.div`
-	position: absolute;
-	top: 110px;
-	display: flex;
-	flex-direction: column;
-	width: 210px;
-	height: 400px;
-	background-color: #333333;
+const StyledWrapper = styled.div`
+  position: absolute;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+  height: 400px;
+  background-color: #333333;
 `
 
-const Title = styled.p`
-	font-size: 18px;
-	margin-left: 14px;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	margin-top: 15px;
-	letter-spacing: 1px;
+const StyledTitle = styled.p`
+  font-size: 18px;
+  margin-left: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 15px;
+  letter-spacing: 1px;
 `
 
-const OptionTitle = styled.p`
-	font-size: 14px;
-	margin-left: 35px;
-	width: 70px;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	margin-top: 20px;
-	letter-spacing: 1px;
+const StyledOptionTitle = styled.p`
+  font-size: 14px;
+  margin-left: 35px;
+  width: 70px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 20px;
+  letter-spacing: 1px;
 `
 
-const BrandName = styled.div`
+const StyledBrandName = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -38,11 +38,11 @@ const BrandName = styled.div`
 `;
 
 
-const CheckBox = styled.input`
+const StyledCheckBox = styled.input`
   border-radius: 5px;
   cursor: pointer;
 `;
-const Label = styled.label`
+const StyledLabel = styled.label`
   font-size: 13px;
   border-radius: 15px;
   text-transform: uppercase;
@@ -53,10 +53,10 @@ const Label = styled.label`
 `;
 
 export {
-	Title,
-	Wrapper,
-	BrandName,
-	OptionTitle,
-	CheckBox,
-	Label
+  StyledTitle,
+  StyledWrapper,
+  StyledBrandName,
+  StyledOptionTitle,
+  StyledCheckBox,
+  StyledLabel
 }

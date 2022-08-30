@@ -1,15 +1,32 @@
-import {Title, Wrapper, BrandName, OptionTitle, CheckBox, Label} from './style'
-import Button from '../Common/Button'
+import {
+  StyledTitle,
+  StyledWrapper,
+  StyledBrandName,
+  StyledOptionTitle,
+  StyledCheckBox,
+  StyledLabel
+} from './style'
 import {useState} from 'react'
+import {useStore, actions} from '../../store'
 
-const SideBar = ({handleFilter, handleClearFilter}) => {
+const SideBar = () => {
+  //get global state
+  const [state, dispatch] = useStore()
+
+  //create state for filtered item
   const [checked, setChecked] = useState([]);
 
-	const options = ["samsung", "iphone", "vivo"];
+  //Brand option
+  const options = ["samsung", "iphone", "vivo"];
 
-	//Filter function
-	const filterProductBrand = (e) => {
-		let listChecked = [...checked];
+  //fliter product function
+  const handleFilter = (text) => {
+    dispatch(actions.filterProduct(text))
+  }
+
+  //Filter function
+  const filterProductBrand = (e) => {
+    let listChecked = [...checked];
     if (e.target.checked) {
       // add value to array when checked
       listChecked = [...checked, e.target.value];
@@ -19,31 +36,26 @@ const SideBar = ({handleFilter, handleClearFilter}) => {
     }
     setChecked(listChecked);
     handleFilter(listChecked);
-	}
+  }
 
-	//clear filter function
-	const clearFilter = () => {
-		handleClearFilter()
-	}
-
-	return (
-		<Wrapper>
-			<Title>Filter Products</Title>
-			<OptionTitle>Brand</OptionTitle>
-			<BrandName>
+  return (
+    <StyledWrapper>
+      <StyledTitle>Filter Products</StyledTitle>
+      <StyledOptionTitle>Brand</StyledOptionTitle>
+      <StyledBrandName>
         {options.map((item, index) => (
-          <Label key={index}>
-            <CheckBox
+          <StyledLabel key={index}>
+            <StyledCheckBox
               value={item}
               type="checkbox"
               onClick={filterProductBrand}
             />
             {item}
-          </Label>
+          </StyledLabel>
         ))}
-      </BrandName>
-			<Button className='clear-filter-button' text='Clear Filter' onClicked={clearFilter}></Button>
-		</Wrapper>
-	)
+      </StyledBrandName>
+    </StyledWrapper>
+  )
 }
+
 export default SideBar

@@ -13,9 +13,9 @@ const ModalWrapper = styled.div`
 const Modal = styled.div`
   position: fixed;
   width: 400px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #FFF;
   z-index: 9;
   border-radius: 8px;

@@ -2,32 +2,32 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
-	position: absolute;
-	top: 110px;
-	display: flex;
-	flex-direction: column;
-	width: 210px;
-	height: 400px;
-	background-color: #333333;
+  position: absolute;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+  height: 400px;
+  background-color: #333333;
 `
 
 const Title = styled.p`
-	font-size: 18px;
-	margin-left: 14px;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	margin-top: 15px;
-	letter-spacing: 1px;
+  font-size: 18px;
+  margin-left: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 15px;
+  letter-spacing: 1px;
 `
 
 const OptionTitle = styled.p`
-	font-size: 14px;
-	margin-left: 35px;
-	width: 70px;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	margin-top: 20px;
-	letter-spacing: 1px;
+  font-size: 14px;
+  margin-left: 35px;
+  width: 70px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 20px;
+  letter-spacing: 1px;
 `
 
 const BrandName = styled.div`
@@ -53,10 +53,10 @@ const Label = styled.label`
 `;
 
 export {
-	Title,
-	Wrapper,
-	BrandName,
-	OptionTitle,
-	CheckBox,
-	Label
+  Title,
+  Wrapper,
+  BrandName,
+  OptionTitle,
+  CheckBox,
+  Label
 }

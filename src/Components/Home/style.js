@@ -4,8 +4,7 @@ const StyledNavBar = styled.div`
   display: flex;
   width:100%;
   height: 80px;
-  background-color: #333333;
-  // margin: -8px;
+  background-color: var(--color-black);
 `
 
 const StyledTitle = styled.h1`
@@ -13,27 +12,27 @@ const StyledTitle = styled.h1`
   margin-left: 50px;
   font-size: 28px;
   margin-right: 50px;
-  color: #FFF;
+  color: var(--color-white);
   margin-top: 20px;
 `
 
-const StyledImage = styled.div`
+const StyledImage = styled.img`
   align-items: left;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: none;
-  background-color: #FFF;
+  // background-color: var(--color-white);
   margin-top: 15px;
   position: absolute;
   right: 190px;
 `
 
 const StyledEmail = styled.p`
-  color: #FFF;
+  color: var(--color-white);
   position: absolute;
   right: 40px;
-  margin-top: 27px;
+  margin-top: 30px;
 `
 
 const StyledSpan = styled.span`

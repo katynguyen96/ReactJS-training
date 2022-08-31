@@ -50,9 +50,9 @@ const CardProduct = ({ theProduct }) => {
         <StyledImage src={theProduct.productImg}/>
       </StyledImageWarapper>
       <StyledItemInfo>
-        <StyledInfo brand>{theProduct.productBrand}</StyledInfo>
+        <StyledInfo brand center>{theProduct.productBrand}</StyledInfo>
         <StyledName>{theProduct.productName}</StyledName>
-        <StyledInfo>$ {theProduct.productPrice}</StyledInfo>
+        <StyledInfo price bold center>$ {theProduct.productPrice}</StyledInfo>
       </StyledItemInfo>
       <StyledWrapperButton>
         <Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit' onClicked={handleShowModal}></Button>

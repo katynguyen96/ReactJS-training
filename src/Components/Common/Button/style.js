@@ -9,14 +9,14 @@ export const CommonButton = styled.button`
   right: 130px;
   font-size: 15px;
   cursor: pointer;
-  background-color: #0066CC;
-  color: #FFF;
+  background-color: var(--color-blue);
+  color: var(--color-white);
   border: none;
   border-radius: 10px;
   &:hover {
-    background-color: #FFF;
-    color: #0066CC;
-    border: 1px solid #0066CC;
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
   }
 };
 
@@ -27,7 +27,7 @@ export const CommonButton = styled.button`
   font-size: 15px;
   cursor: pointer;
   margin-top: 20px;
-  color: #FFF;
+  color: var(--color-white);
   font-weight: 400;
   border-radius: 5px;
   background-color: ${props => props.inputColor || "#6c757d"}
@@ -41,17 +41,6 @@ export const CommonButton = styled.button`
   color: ${props => props.inputColor || "#CCCCCC"};
 }
 
-  &.search-button {
-    font-size: 15px;
-    margin-left: 7px;
-    height: 30px;
-    width: 45px;
-    background-color: #FFFF66;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
   &.confirm-delete-button {
     margin-left: 5px;
     margin-right:5px;
@@ -60,7 +49,7 @@ export const CommonButton = styled.button`
     width: 115px;
     height: 39px;
     border: none;
-    color: #FFF;
+    color: var(--color-white);
     font-size: 16px;
     background-color: ${props => props.inputColor || "#c1c1c1"};
     border-radius: 5px;

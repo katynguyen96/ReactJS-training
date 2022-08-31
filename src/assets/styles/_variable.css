@@ -1,0 +1,18 @@
+:root {
+	/*bg-btn*/
+	--color-blue: #0066cc;
+	/*text,bg*/
+	--color-white: #FFF;
+	/*btn-modal*/
+	--color-gray:#6C757D;
+	/*modal-blur*/
+	--color-blur:rgb(0 0 0 / 30%);
+	/*confirm-modal-icon*/
+	--color-red:#F15E5E;
+	/*input-modal*/
+	--color-light-white:#ced4da;
+	/*focus input modal*/
+	--color-light-blue:#33CCFF;
+	/*navbar, sidebar bg*/
+	--color-black:#333333;
+}

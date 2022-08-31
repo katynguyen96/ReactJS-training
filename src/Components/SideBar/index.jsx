@@ -40,7 +40,7 @@ const SideBar = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Filter Products</StyledTitle>
+      <StyledTitle>Filter</StyledTitle>
       <StyledOptionTitle>Brand</StyledOptionTitle>
       <StyledBrandName>
         {options.map((item, index) => (

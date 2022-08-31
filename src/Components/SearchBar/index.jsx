@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   return (
     <StyledInputWrapper>
-      <StyledSearchInput placeholder='Search...' onChange={handleSearch}/>
+      <StyledSearchInput placeholder="Search..." onChange={handleSearch}/>
     </StyledInputWrapper>
   )
 }

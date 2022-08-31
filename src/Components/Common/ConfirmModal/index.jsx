@@ -7,7 +7,7 @@ import {
   StyledContent, 
   StyledButtonWrapper, 
   StyledIconBox
-} from "./style"
+} from './style'
 
 const ConfirmModal = ({ onCloseModal, onFeature, icon, content, title }) => {
 
@@ -25,8 +25,17 @@ const ConfirmModal = ({ onCloseModal, onFeature, icon, content, title }) => {
         <StyledTitle>{title}</StyledTitle>
         <StyledContent>{content}</StyledContent>
         <StyledButtonWrapper>
-          <Button className="confirm-delete-button" onClicked={handleCloseConfirmModal} text="Close" />
-          <Button inputColor="#f15e5e" className="confirm-delete-button" onClicked={onFeature} text="Delete"/>
+          <Button 
+            className="confirm-delete-button" 
+            onClicked={handleCloseConfirmModal} 
+            text="Close" 
+          />
+          <Button 
+            inputColor="#f15e5e" 
+            className="confirm-delete-button" 
+            onClicked={onFeature} 
+            text="Delete"
+          />
         </StyledButtonWrapper>
       </StyledModal>
     </StyledModalWrapper>

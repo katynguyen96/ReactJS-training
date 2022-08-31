@@ -16,7 +16,11 @@ const Products = ({onDelete, onUpdate, currentProduct}) => {
     <>
       {currentProduct.map((product)=>(
         <StyledWrapper key={product.id}>
-          <CardProduct onDelete={deleteProduct} theProduct={product} onUpdate={handleEditProduct}/>
+          <CardProduct 
+            onDelete={deleteProduct} 
+            theProduct={product} 
+            onUpdate={handleEditProduct}
+          />
         </StyledWrapper>
       ))}
     </>

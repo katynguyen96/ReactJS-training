@@ -9,6 +9,13 @@ This document provides information about Javascript practice. Build Product Mana
 - Styled components
 - React hooks
 
+## Main features
+- Users could create new products
+- Users could update products
+- Users could delete products 
+- Users could filter the list of products by brand
+- Users could search the list of products by name
+
 ## Timeline
 22 working days (July 11, 2022, to Aug 24, 2022)
 
@@ -16,7 +23,6 @@ This document provides information about Javascript practice. Build Product Mana
 - Build an application for managing product using React
 - Using React Hooks
 - Apply useContext and useReducer for state management
-- Check re-render and using hook to avoid re-render.
 
 ## Reference
 - [React advanced](https://reactjs.org/docs/accessibility.html)

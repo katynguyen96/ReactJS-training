@@ -47,7 +47,7 @@ const CardProduct = ({ theProduct }) => {
   return (
     <>
       <StyledImageWarapper>
-        <StyledImage src={theProduct.productImg}/>
+        <StyledImage src={theProduct.productImg} alt="phone" />
       </StyledImageWarapper>
       <StyledItemInfo>
         <StyledInfo brand center>{theProduct.productBrand}</StyledInfo>
@@ -55,17 +55,33 @@ const CardProduct = ({ theProduct }) => {
         <StyledInfo price bold center>$ {theProduct.productPrice}</StyledInfo>
       </StyledItemInfo>
       <StyledWrapperButton>
-        <Button className='card-button' inputColor='#A3A0C2' icon='fas fa-edit' onClicked={handleShowModal}></Button>
-        {show && <Modal editProductValue={theProduct} onCloseModal={handleCloseModal} text='Edit Product'/>}
+        <Button 
+          className="card-button" 
+          inputColor="#A3A0C2" 
+          icon="fas fa-edit" 
+          onClicked={handleShowModal}
+        />
+        {show && 
+          <Modal 
+          editProductValue={theProduct} 
+          onCloseModal={handleCloseModal} 
+          text="Edit Product"
+        />}
         {showConfirmModal && 
           <ConfirmModal 
             icon = "fas fa-xmark"
             title = "Are You Sure?"
             content = "Do you really want to delete these records? This process cannot be undone."
             onCloseModal={handleCloseConfirmModal} 
-            onFeature={() => handleDelete(theProduct.id)}/>
+            onFeature={() => handleDelete(theProduct.id)}
+          />
         }
-        <Button className='card-button' inputColor='#C36C1C' icon='fas fa-trash-alt' onClicked={handleShowConfirmModal}></Button>
+        <Button 
+          className="card-button" 
+          inputColor="#C36C1C" 
+          icon="fas fa-trash-alt" 
+          onClicked={handleShowConfirmModal}
+        />
       </StyledWrapperButton>  
     </>
   )

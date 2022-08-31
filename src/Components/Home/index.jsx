@@ -43,18 +43,27 @@ const Home = () => {
       <StyledSearch>
           <StyledNavBar>
             <StyledTitle><StyledSpan>P</StyledSpan>hone<StyledSpan>S</StyledSpan>hop</StyledTitle>
-            <SearchBar/>
-            <StyledImage src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="person"/>
+            <SearchBar />
+            <StyledImage src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="avatar"/>
             <StyledEmail>example@gmail.com</StyledEmail>
           </StyledNavBar>
-          <Button className='add' onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>
-          {show && <Modal onCloseModal={handleCloseModal} isCreated='true' text='Create Product'/>}
+          <Button 
+            className="add" 
+            onClicked={handleShowModal} 
+            text="Add New" icon="fas fa-plus-square" 
+          />
+          {show && 
+            <Modal 
+              onCloseModal={handleCloseModal} 
+              isCreated="true" 
+              text="Create Product"
+          />}
       </StyledSearch>
       <StyledLine>List Product</StyledLine>
       <StyledListProduct>
         <Products currentProduct={currentProduct}/>
       </StyledListProduct>
-      <SideBar/>
+      <SideBar />
     </>
   )
 }

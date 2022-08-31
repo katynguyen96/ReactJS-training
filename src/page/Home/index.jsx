@@ -10,11 +10,11 @@ import {
   StyledImage,
   StyledEmail
 } from './style.js'
-import SearchBar from '../SearchBar'
-import SideBar from '../SideBar'
-import Button from '../Common/Button'
-import Modal from '../Common/Modal'
-import Products from '../Products'
+import SearchBar from '../../components/SearchBar'
+import SideBar from '../../components/SideBar'
+import Button from '../../components/Common/Button'
+import Modal from '../../components/Common/Modal'
+import Products from '../../components/Products'
 
 const Home = () => {
   //import global state

@@ -12,7 +12,6 @@ import {useStore, actions} from '../../store'
 const SideBar = () => {
   //get global state
   const [state, dispatch] = useStore()
-
   //create state for filtered item
   const [checked, setChecked] = useState([]);
 
@@ -49,6 +48,7 @@ const SideBar = () => {
               value={item}
               type="checkbox"
               onClick={filterProductBrand}
+              disabled={state.products.length === 0 ? true : false}
             />
             {item}
           </StyledLabel>

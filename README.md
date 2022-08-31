@@ -20,7 +20,7 @@ This document provides information about Javascript practice. Build Product Mana
 - [Airbnb](https://airbnb.io/javascript/react/)
 
 ## Timeline
-22 working days (July 11, 2022, to Aug 24, 2022)
+21 working days (July 11, 2022, to Aug 24, 2022)
 
 ## Target
 - Build an application for managing product using React

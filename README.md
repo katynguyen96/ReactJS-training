@@ -16,6 +16,9 @@ This document provides information about Javascript practice. Build Product Mana
 - Users could filter the list of products by brand
 - Users could search the list of products by name
 
+## JSX Style Guide
+- [Airbnb](https://airbnb.io/javascript/react/)
+
 ## Timeline
 22 working days (July 11, 2022, to Aug 24, 2022)
 

@@ -42,9 +42,9 @@ const Home = () => {
     <>
       <StyledSearch>
           <StyledNavBar>
-            <StyledTitle><StyledSpan>m</StyledSpan>y<StyledSpan>p</StyledSpan>roduct</StyledTitle>
+            <StyledTitle><StyledSpan>P</StyledSpan>hone<StyledSpan>S</StyledSpan>hop</StyledTitle>
             <SearchBar/>
-            <StyledImage/>
+            <StyledImage src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="person"/>
             <StyledEmail>example@gmail.com</StyledEmail>
           </StyledNavBar>
           <Button className='add' onClicked={handleShowModal} text='Add New' icon='fas fa-plus-square' ></Button>

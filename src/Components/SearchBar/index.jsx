@@ -3,6 +3,7 @@ import {
   StyledSearchInput
 } from './style.js'
 import {useStore, actions} from '../../store'
+
 const SearchBar = () => {
   //get global state
 	const [state, dispatch] = useStore()

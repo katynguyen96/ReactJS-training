@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledModalWrapper = styled.div`
-  background-color: rgb(0 0 0 / 30%);
+  background-color: var(--color-blur);
   position: fixed;
   left:0;
   bottom:0;
@@ -53,12 +53,10 @@ const StyledIconBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #f15e5e;
-  color: #f15e5e;
+  border: 3px solid var(--color-red);
+  color: var(--color-red);
   font-size: 48px;
   margin-top: 20px;
 `
-
-
 
 export { StyledModalWrapper, StyledModal, StyledTitle, StyledContent, StyledButtonWrapper, StyledIconBox };

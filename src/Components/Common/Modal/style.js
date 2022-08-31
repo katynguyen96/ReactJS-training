@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledModalWrapper = styled.div`
-  background-color: rgb(0 0 0 / 30%);
+  background-color: var(--color-blur);
   position: fixed;
   z-index: 10;
   top: 0;
@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 540px;
-  background: #FFF;
+  background: var(--color-white);
   border-radius: 5px;
 `
 
@@ -41,12 +41,12 @@ const StyledLabel = styled.p`
 const StyledInput = styled.input`
   width: 450px;
   height: 30px;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--color-light-white);
   border-radius: 5px;
   transition: ease-in-out 0.3s;
   &:focus {
     outline: none;
-    border: 1px solid #33CCFF;
+    border: 1px solid var(--color-light-blue);
     box-shadow: 0 0 10px #719ECE
   }
 `
@@ -64,7 +64,7 @@ const StyledWrapperButton = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 25px;
-  border-top: 1px solid #ced4da;
+  border-top: 1px solid var(--color-light-white);
   margin-bottom: 20px;
 `
 

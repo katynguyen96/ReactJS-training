@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-
+ 
 const StyledImageWarapper = styled.div`
   width: 150px;
   height: 150px;
 `
- 
+
 const StyledImage = styled.img`
   width: auto;
   height: 100%;
@@ -30,6 +30,8 @@ const StyledInfo = styled.p`
   font-size: 17px;
   opacity: ${props => props.brand ? "0.6" : "1"};
   text-transform: capitalize;
+  color: ${props => props.price ? "red" : "black" };
+  font-weight: ${props => props.bold ? "600" : "400"};
 `
 
 const StyledWrapperButton = styled.div`

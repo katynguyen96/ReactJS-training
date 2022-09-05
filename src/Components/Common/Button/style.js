@@ -2,17 +2,14 @@ import styled from 'styled-components'
 
 export const CommonButton = styled.button`
   &.add {
-  position: absolute;
-  width: 100px;
-  height: 40px;
-  top: 115px;
-  right: 130px;
   font-size: 15px;
   cursor: pointer;
   background-color: var(--color-blue);
   color: var(--color-white);
   border: none;
   border-radius: 10px;
+  width: 100px;
+  height: 40px;
   &:hover {
     background-color: var(--color-white);
     color: var(--color-blue);

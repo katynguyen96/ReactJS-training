@@ -3,12 +3,20 @@ import {useStore} from '../../store'
 import {
   StyledNavBar,
   StyledTitle,
-  StyledSpan,
   StyledSearch,
   StyledListProduct,
   StyledLine,
-  StyledImage,
-  StyledEmail
+  StyledEmail,
+  StyledUserIcon,
+  StyledAccount,
+  StyledShoppingCart,
+  StyledShopping,
+  StyledShoppingTitle,
+  CartWrapper,
+  UserItem,
+  StyledWrapperPage,
+  StyledBarWrapper,
+  StyledWrapperAddButton
 } from './style.js'
 import SearchBar from '../../components/SearchBar'
 import SideBar from '../../components/SideBar'
@@ -39,15 +47,28 @@ const Home = () => {
   } 
 
   return (
-    <>
+    <StyledWrapperPage>
       <StyledSearch>
           <StyledNavBar>
-            <StyledTitle><StyledSpan>P</StyledSpan>hone<StyledSpan>S</StyledSpan>hop</StyledTitle>
+            <StyledTitle>PhoneShop</StyledTitle>
             <SearchBar />
-            <StyledImage src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="avatar"/>
-            <StyledEmail>example@gmail.com</StyledEmail>
+            <StyledUserIcon><i class="fas fa-user"></i></StyledUserIcon>
+            <StyledAccount>
+              <StyledEmail>Login/Logout</StyledEmail>
+              <StyledEmail>Account</StyledEmail>
+            </StyledAccount>
+            <StyledShopping>
+              <CartWrapper>
+                <StyledShoppingCart><i class="fas fa-cart-shopping"></i></StyledShoppingCart>
+                <UserItem>0</UserItem>
+              </CartWrapper >
+              <StyledShoppingTitle>Shopping Cart</StyledShoppingTitle>
+            </StyledShopping>
           </StyledNavBar>
-          <Button 
+      </StyledSearch>
+      <StyledWrapperAddButton>
+      <StyledLine>List Product</StyledLine>
+        <Button 
             className="add" 
             onClicked={handleShowModal} 
             text="Add New" icon="fas fa-plus-square" 
@@ -58,13 +79,14 @@ const Home = () => {
               isCreated="true" 
               text="Create Product"
           />}
-      </StyledSearch>
-      <StyledLine>List Product</StyledLine>
-      <StyledListProduct>
-        <Products currentProduct={currentProduct}/>
-      </StyledListProduct>
-      <SideBar />
-    </>
+      </StyledWrapperAddButton>
+      <StyledBarWrapper>
+        <SideBar />
+        <StyledListProduct>
+          <Products currentProduct={currentProduct}/>
+        </StyledListProduct>
+      </StyledBarWrapper>
+    </StyledWrapperPage>
   )
 }
 

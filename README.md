@@ -4,10 +4,9 @@
 This document provides information about Javascript practice. Build Product Management website
 
 ## Technical
-- JSX
 - ReactJS
 - Styled components
-- React hooks
+
 
 ## Main features
 - Users could create new products

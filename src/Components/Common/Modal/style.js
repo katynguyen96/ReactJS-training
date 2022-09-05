@@ -44,10 +44,11 @@ const StyledInput = styled.input`
   border: 1px solid var(--color-light-white);
   border-radius: 5px;
   transition: ease-in-out 0.3s;
+  padding-left: 10px;
   &:focus {
     outline: none;
     border: 1px solid var(--color-light-blue);
-    box-shadow: 0 0 10px #719ECE
+    box-shadow: 0 0 10px #719ECE;
   }
 `
 

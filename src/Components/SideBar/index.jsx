@@ -1,5 +1,4 @@
 import {
-  StyledTitle,
   StyledWrapper,
   StyledBrandName,
   StyledOptionTitle,
@@ -39,7 +38,6 @@ const SideBar = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Filter</StyledTitle>
       <StyledOptionTitle>Brand</StyledOptionTitle>
       <StyledBrandName>
         {options.map((item, index) => (

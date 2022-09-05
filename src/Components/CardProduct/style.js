@@ -6,9 +6,9 @@ const StyledImageWarapper = styled.div`
 `
 
 const StyledImage = styled.img`
-  width: auto;
-  height: 100%;
-  margin-left: 20px;
+  width: 100%;
+  height: auto;
+  margin-left: 40px;
   margin-top: 5px;
 `
 

@@ -3,7 +3,7 @@ import Context from './Context'
 import reducer, {initState} from '../reducers/product.reducer'
 import { KEY } from '../constants/constants'
 
-const Provider = ({children}) => {
+const Provider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initState , () => {
     //get item in localstorage
@@ -14,7 +14,7 @@ const Provider = ({children}) => {
   useEffect(() => {
     //set item into localstorage when products change
     localStorage.setItem(KEY, JSON.stringify(state))
-  }, [state])
+  }, [state.products])
   return (
     <Context.Provider value={[state, dispatch]}>
       {children}

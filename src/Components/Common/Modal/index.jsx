@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+import {useState} from 'react'
 import {
   StyledModalWrapper,
   StyledWrapper,
@@ -10,11 +12,9 @@ import {
   StyledWrapperButton,
   StyledMessage
 } from './style'
-import {useState} from 'react'
 import Button from '../Button'
 import {useStore, actions} from '../../../store'
 import {BRAND_OPTIONS} from '../../../constants/constants'
-import { v4 as uuidv4 } from 'uuid'
 
 const Modal = ({text, isCreated, onCloseModal, editProductValue = {}}) => {//isCreated: set if is create or edit modal
                                                                                               //editProductValue: get from CardItem component 

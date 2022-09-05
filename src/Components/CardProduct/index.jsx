@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import {
   StyledImage,
   StyledItemInfo,
@@ -10,7 +11,6 @@ import Button from '../Common/Button'
 import Modal from '../Common/Modal'
 import ConfirmModal from '../Common/ConfirmModal'
 import {useStore, actions} from '../../store'
-import {useState} from 'react'
 
 const CardProduct = ({ theProduct }) => {
 //theProduct: get the product when map through products array in products componentt

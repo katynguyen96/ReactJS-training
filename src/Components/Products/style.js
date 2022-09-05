@@ -1,15 +1,18 @@
 import styled from 'styled-components'
 
 const StyledWrapper = styled.div`
-  border-radius: 15px;
-  width: 200px;
+  width: 240px;
   height: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-left: 80px;
-  margin-top: 40px;
-  box-shadow: 3px 7px 12px #888888;
+  margin-top: 1px;
+  cursor:pointer;
+  border: 1px solid transparent;
+  background-color:white;
+  &:hover {
+    box-shadow: 1px 1px 4px 4px #DDDDDD;
+  }
 `
 
 export {

@@ -1,21 +1,29 @@
+import {useState} from 'react'
 import {
   StyledInputWrapper,
-  StyledSearchInput
+  StyledSearchInput,
+  StyledSearchButton,
+  StyledButtonContent
 } from './style.js'
 import {useStore, actions} from '../../store'
 
 const SearchBar = () => {
   //get global state
 	const [state, dispatch] = useStore()
-
+  const [input, setInput] = useState("")
   //search product function
   const handleSearch = (e) => {
-    dispatch(actions.searchProduct(e.target.value))
+    dispatch(actions.searchProduct(input))
+  }
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
   }
 
   return (
     <StyledInputWrapper>
-      <StyledSearchInput placeholder="Search..." onChange={handleSearch}/>
+      <StyledSearchInput placeholder="Search..." onChange={handleChange}/>
+      <StyledSearchButton onClick={handleSearch}><StyledButtonContent>Search</StyledButtonContent></StyledSearchButton>
     </StyledInputWrapper>
   )
 }

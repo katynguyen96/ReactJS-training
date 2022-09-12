@@ -18,6 +18,7 @@ const CardProduct = ({ theProduct }) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false)
   const [state, dispatch] = useStore()
 
+  //Testing
   //show edit modal function
   const handleShowModal = () => {
     setShow(true)

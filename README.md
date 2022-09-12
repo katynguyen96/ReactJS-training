@@ -1,7 +1,7 @@
 ## ReactJS practice
 
 ## Overview
-This document provides information about Javascript practice. Build Product Management website
+This document provides information about ReactJS practice. Build Product Management website
 
 ## Technical
 - ReactJS
